@@ -27,9 +27,15 @@ namespace thrid_project
         public int TypeOfTransport;
         public string CertainTransportName;
         public int CertainTransportPrice;
-        public List<int> EatingPlaceType;
-        public List<string> EatingPlaceName;
-        public List<int> EatingPlacePrice;
-        public List<string> EatingPlaceInfo;
+        public List<int> EatingPlaceType = new List<int>();
+        public List<string> EatingPlaceName = new List<string>();
+        public List<int> EatingPlacePrice = new List<int>();
+        public List<string> EatingPlaceInfo = new List<string>();
+        public double LatitudeTownTo;
+        public double LongitudeTownTo;
+        public double LatitudeTownFrom;
+        public double LongitudeTownFrom;
+        public double LatitudeTownPlace1;
+        public double LongitudeTownPlace1;
     }
 }

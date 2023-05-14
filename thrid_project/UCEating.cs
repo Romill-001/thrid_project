@@ -14,16 +14,15 @@ namespace thrid_project
     public partial class UCEating : UserControl
     {
         DataBase db = new DataBase();
-        DataTable dt;
+        DataTable dt = new DataTable();
         public int tag;
         public int type;
         List<Panel> lst = new List<Panel>();
         public UserControl next;
-        public UCEating(int type, UserControl next)
+        public UCEating(int type)
         {
             this.type = type;
             InitializeComponent();
-            this.next = next;
         }
         public void GetEating()
         {
@@ -95,12 +94,12 @@ namespace thrid_project
         private void add_CLick(object sender, EventArgs e)
         {
             tag = int.Parse(((Button)sender).Tag.ToString());
-            for (int i = 0; i < lst.Count; i++)
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                //if (!lst[i].Tag.Equals(tag))
-                //{
-                //    lst[i].Enabled = false;
-                //}
+                if (!lst[i].Tag.Equals(tag))
+                {
+                    lst[i].Enabled = false;
+                }
             }
             mainForm.atr.EatingPlacePrice.Add(int.Parse(dt.Rows[tag].ItemArray[2].ToString()));
             mainForm.atr.EatingPlaceName.Add(dt.Rows[tag].ItemArray[1].ToString());

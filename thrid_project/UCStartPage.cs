@@ -111,6 +111,16 @@ namespace thrid_project
             string que3 = $"select * from Towns where Town_ID={mainForm.atr.Place1}";
             dt = SQLServer.ExecuteQuerySelect(que3);
             mainForm.atr.TownName = dt.Rows[0].ItemArray[1].ToString();
+            mainForm.atr.LatitudeTownPlace1 = double.Parse(dt.Rows[0].ItemArray[3].ToString());
+            mainForm.atr.LongitudeTownPlace1 = double.Parse(dt.Rows[0].ItemArray[2].ToString());
+            string que4 = $"select * from Towns where Town_ID={mainForm.atr.TownTo}";
+            dt = SQLServer.ExecuteQuerySelect(que4);
+            mainForm.atr.LongitudeTownTo = double.Parse(dt.Rows[0].ItemArray[2].ToString());
+            mainForm.atr.LatitudeTownTo = double.Parse(dt.Rows[0].ItemArray[3].ToString());
+            string que5 = $"select * from Towns where Town_ID={mainForm.atr.TownFrom}";
+            dt = SQLServer.ExecuteQuerySelect(que5);
+            mainForm.atr.LatitudeTownFrom = double.Parse(dt.Rows[0].ItemArray[3].ToString());
+            mainForm.atr.LongitudeTownFrom = double.Parse(dt.Rows[0].ItemArray[2].ToString());
             db.ConnectionClose();
         }
     }

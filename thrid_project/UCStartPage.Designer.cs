@@ -84,7 +84,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.radioButtonLicenseYes);
             this.groupBox1.Controls.Add(this.radioButtonLicenseNo);
-            this.groupBox1.Location = new System.Drawing.Point(30, 75);
+            this.groupBox1.Location = new System.Drawing.Point(238, 145);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(268, 110);
             this.groupBox1.TabIndex = 6;

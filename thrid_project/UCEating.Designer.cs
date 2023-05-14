@@ -47,6 +47,7 @@
             this.btnNext.Text = "Далее";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Visible = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // panel1
             // 
