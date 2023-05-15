@@ -49,5 +49,10 @@ namespace thrid_project
             gMapControl1.Position = new GMap.NET.PointLatLng(55.7887, 49.1221);// точка в центре карты при открытии (центр России)
             gMapControl1.Zoom = 4; // какой используется зум при открытии
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            mainForm.ActiveForm.Controls.Remove(this);
+        }
     }
 }

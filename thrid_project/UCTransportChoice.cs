@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace thrid_project
@@ -50,6 +51,7 @@ namespace thrid_project
             panelwalking.Enabled=false;
             mainForm.atr.TypeOfTransport = 2;
             btnNext.Visible = true;
+            btnCancel.Visible = true;
         }
 
         private void taxi_Click(object sender, EventArgs e)
@@ -59,6 +61,7 @@ namespace thrid_project
             panelwalking.Enabled = false;
             mainForm.atr.TypeOfTransport = 1;
             btnNext.Visible = true;
+            btnCancel.Visible = true;
         }
 
         private void walking_Click(object sender, EventArgs e)
@@ -69,6 +72,7 @@ namespace thrid_project
             mainForm.atr.TypeOfTransport = 0;
             check = true;
             btnNext.Visible = true;
+            btnCancel.Visible = true;
         }
 
         private void autorent_Click(object sender, EventArgs e)
@@ -78,12 +82,27 @@ namespace thrid_project
             panelwalking.Enabled = false;
             mainForm.atr.TypeOfTransport = 3;
             btnNext.Visible = true;
+            btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             mainForm.ActiveForm.Controls.Add(mainForm.certaintr);
             mainForm.certaintr.BringToFront();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            mainForm.ActiveForm.Controls.Remove(this);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            panelpublic.Enabled = true;
+            paneltaxi.Enabled = true;
+            panelwalking.Enabled = true;
+            panelrent.Enabled = true;
+            btnNext.Visible = false;
         }
     }
 }

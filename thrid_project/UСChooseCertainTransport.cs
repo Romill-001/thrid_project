@@ -21,12 +21,6 @@ namespace thrid_project
         {
             InitializeComponent();
         }
-
-        private void UСChooseCertainTransport_MouseMove(object sender, MouseEventArgs e)
-        {
-            label_country.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
-            GetTransport();
-        }
         public void GetTransport()
         {
             db.ConnectionOpen();
@@ -107,12 +101,33 @@ namespace thrid_project
             mainForm.atr.CertainTransportPrice = int.Parse(dt.Rows[tag].ItemArray[3].ToString());
             mainForm.atr.CertainTransportName = dt.Rows[tag].ItemArray[4].ToString();
             btnNext.Visible = true;
+            btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             mainForm.ActiveForm.Controls.Add(mainForm.zavtrak);
             mainForm.zavtrak.BringToFront();
+        }
+
+        private void UСChooseCertainTransport_MouseEnter(object sender, EventArgs e)
+        {
+            label_country.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
+            GetTransport();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            mainForm.ActiveForm.Controls.Remove(this);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lst.Count; i++)
+            {
+                lst[i].Enabled = true;
+            }
+            btnNext.Visible = false;
         }
     }
 }

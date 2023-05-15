@@ -22,6 +22,7 @@ namespace thrid_project
         public int TypeOfHouse;
         public int HousePrice;
         public string HouseName;
+        public string HouseRating;
         public int Distance;
         public string TiketTransportTypeLocation;
         public int TypeOfTransport;

@@ -105,6 +105,7 @@ namespace thrid_project
             mainForm.atr.EatingPlaceName.Add(dt.Rows[tag].ItemArray[1].ToString());
             mainForm.atr.EatingPlaceInfo.Add(dt.Rows[tag].ItemArray[3].ToString());
             btnNext.Visible = true;
+            btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -115,14 +116,31 @@ namespace thrid_project
 
         private void btnSkip_Click(object sender, EventArgs e)
         {
+            mainForm.atr.EatingPlacePrice.Add(0);
+            mainForm.atr.EatingPlaceName.Add(null);
+            mainForm.atr.EatingPlaceInfo.Add(null);
             mainForm.ActiveForm.Controls.Add(next);
             next.BringToFront();
         }
 
-        private void UCEating_MouseMove(object sender, MouseEventArgs e)
+        private void UCEating_MouseEnter(object sender, EventArgs e)
         {
             label1.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
             GetEating();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            mainForm.ActiveForm.Controls.Remove(this);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lst.Count; i++)
+            {
+                lst[i].Enabled = true;
+            }
+            btnNext.Visible = false;
         }
     }
 }

@@ -115,7 +115,9 @@ namespace thrid_project
             mainForm.atr.Distance = int.Parse(dt.Rows[tag].ItemArray[4].ToString());
             mainForm.atr.HousePrice = int.Parse(dt.Rows[tag].ItemArray[1].ToString());
             mainForm.atr.HouseName = dt.Rows[tag].ItemArray[3].ToString();
+            mainForm.atr.HouseRating = new String('\u2605', int.Parse(dt.Rows[tag].ItemArray[2].ToString()));
             btnNext.Visible = true;
+            btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -128,6 +130,20 @@ namespace thrid_project
         {
             label1.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
             GetHouses();
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            mainForm.ActiveForm.Controls.Remove(this);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lst.Count; i++)
+            {
+                lst[i].Enabled = true;
+            }
+            btnNext.Visible = false;
         }
     }
 }

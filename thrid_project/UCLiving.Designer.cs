@@ -37,6 +37,8 @@
             this.Rent = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Poh = new System.Windows.Forms.Label();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -49,7 +51,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(1070, 636);
+            this.btnNext.Location = new System.Drawing.Point(1075, 636);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(105, 40);
             this.btnNext.TabIndex = 18;
@@ -138,11 +140,39 @@
             this.Poh.Text = "Проживание у \r\nдрузей/родственников";
             this.Poh.Click += new System.EventHandler(this.Poh_Click);
             // 
+            // btnPrev
+            // 
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Image = global::thrid_project.Properties.Resources.Рисунок1;
+            this.btnPrev.Location = new System.Drawing.Point(20, 20);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(30, 30);
+            this.btnPrev.TabIndex = 24;
+            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancel.Location = new System.Drawing.Point(1070, 558);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(114, 60);
+            this.btnCancel.TabIndex = 29;
+            this.btnCancel.Text = "Отменить\r\nвыбор";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // UCLiving
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -173,5 +203,7 @@
         private System.Windows.Forms.Label Rent;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label Poh;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

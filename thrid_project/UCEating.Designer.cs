@@ -32,6 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSkip = new System.Windows.Forms.Button();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnNext
@@ -40,7 +42,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(1068, 636);
+            this.btnNext.Location = new System.Drawing.Point(1061, 634);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(105, 40);
             this.btnNext.TabIndex = 19;
@@ -75,7 +77,7 @@
             this.btnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSkip.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSkip.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSkip.Location = new System.Drawing.Point(1055, 574);
+            this.btnSkip.Location = new System.Drawing.Point(1048, 569);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(131, 40);
             this.btnSkip.TabIndex = 23;
@@ -83,18 +85,46 @@
             this.btnSkip.UseVisualStyleBackColor = false;
             this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
+            // btnPrev
+            // 
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Image = global::thrid_project.Properties.Resources.Рисунок1;
+            this.btnPrev.Location = new System.Drawing.Point(20, 20);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(30, 30);
+            this.btnPrev.TabIndex = 24;
+            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancel.Location = new System.Drawing.Point(1056, 490);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(114, 61);
+            this.btnCancel.TabIndex = 30;
+            this.btnCancel.Text = "Отменить\r\nвыбор";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // UCEating
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.btnSkip);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNext);
             this.Name = "UCEating";
             this.Size = new System.Drawing.Size(1200, 700);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UCEating_MouseMove);
+            this.MouseEnter += new System.EventHandler(this.UCEating_MouseEnter);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,5 +136,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSkip;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

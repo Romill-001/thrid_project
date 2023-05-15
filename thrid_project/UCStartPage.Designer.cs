@@ -118,6 +118,7 @@
             this.comboBoxToTown.Name = "comboBoxToTown";
             this.comboBoxToTown.Size = new System.Drawing.Size(203, 32);
             this.comboBoxToTown.TabIndex = 9;
+            this.comboBoxToTown.SelectedValueChanged += new System.EventHandler(this.TownToChoice);
             // 
             // label3
             // 

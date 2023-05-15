@@ -34,7 +34,18 @@ namespace thrid_project
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
-            GetTickets();
+            if (lst.Count == 0)
+            {
+                GetTickets();
+            }
+            else
+            {
+                for (int i = 0;i<lst.Count;i++)
+                {
+                    Controls.Remove(lst[i]);
+                }
+                GetTickets();
+            }
         }
 
         public void GetTickets()
@@ -119,6 +130,7 @@ namespace thrid_project
             }
             mainForm.atr.TicketPrice = int.Parse(dt.Rows[tag].ItemArray[1].ToString());
             btnNext.Visible = true;
+            btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -130,6 +142,20 @@ namespace thrid_project
         private void UCTransport_MouseMove(object sender, MouseEventArgs e)
         {
             labelDestiantion.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            mainForm.ActiveForm.Controls.Remove(this);
+        }
+
+        private void bntCancel_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lst.Count; i++)
+            {
+                lst[i].Enabled = true;
+            }
+            btnNext.Visible=false;
         }
     }
 }
