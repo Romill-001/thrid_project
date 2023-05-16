@@ -14,26 +14,23 @@ namespace thrid_project
     public partial class UСChooseCertainTransport : UserControl
     {
         DataBase db = new DataBase();
-        DataTable dt;
+        DataTable dt = new DataTable();
         public int tag;
         List<Panel> lst = new List<Panel>();
         public UСChooseCertainTransport()
         {
             InitializeComponent();
         }
-        public void GetTransport()
+        public void GetTransport(DataRow[] dt)
         {
-            db.ConnectionOpen();
-            string que = $"select * from Transport where Type={mainForm.atr.TypeOfTransport}";
-            dt = SQLServer.ExecuteQuerySelect(que);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < dt.Count(); i++)
             {
                 Label name = new Label
                 {
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = dt.Rows[i].ItemArray[4].ToString(),
+                    Text = dt[i].ItemArray[4].ToString(),
                     Location = new Point(250, 15),
                     BackColor = Color.White,
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
@@ -44,7 +41,7 @@ namespace thrid_project
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = dt.Rows[i].ItemArray[5].ToString(),
+                    Text = dt[i].ItemArray[5].ToString(),
                     Location = new Point(190, 15),
                     BackColor = Color.White,
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
@@ -67,7 +64,7 @@ namespace thrid_project
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = $"{dt.Rows[i].ItemArray[3]} рублей",
+                    Text = $"{dt[i].ItemArray[3]} рублей",
                     Location = new Point(450, 15),
                     BackColor = Color.White,
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
@@ -98,27 +95,42 @@ namespace thrid_project
                     lst[i].Enabled = false;
                 }
             }
-            mainForm.atr.CertainTransportPrice = int.Parse(dt.Rows[tag].ItemArray[3].ToString());
-            mainForm.atr.CertainTransportName = dt.Rows[tag].ItemArray[4].ToString();
+            MainForm.atr.CertainTransportPrice = int.Parse(dt.Rows[tag].ItemArray[3].ToString());
+            MainForm.atr.CertainTransportName = dt.Rows[tag].ItemArray[4].ToString();
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
-
+        public DataRow[] Start()
+        {
+            db.ConnectionOpen();
+            string que = $"select * from Transport where Type={MainForm.atr.TypeOfTransport}";
+            dt = SQLServer.ExecuteQuerySelect(que);
+            db.ConnectionClose();
+            var new_dt = dt.Select($"Type = {MainForm.atr.TypeOfTransport}");
+            return new_dt;
+        }
         private void btnNext_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Add(mainForm.zavtrak);
-            mainForm.zavtrak.BringToFront();
+            MainForm.ActiveForm.Controls.Add(MainForm.zavtrak);
+            MainForm.zavtrak.Visible = true;
+            MainForm.zavtrak.BringToFront();
         }
 
         private void UСChooseCertainTransport_MouseEnter(object sender, EventArgs e)
         {
-            label_country.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
-            GetTransport();
+            switch (MainForm.atr.TypeOfTransport)
+            {
+                case 1: llbtrname.Text = "Выбор такси"; break;
+                case 2: llbtrname.Text = "Выбор общественного транспорта"; break;
+                case 3: llbtrname.Text = "Выбор арендованной машины"; break;
+            }
+            label_country.Text = MainForm.atr.Country_Name + ", " + MainForm.atr.TownName;
+            GetTransport(Start());
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Remove(this);
+            MainForm.ActiveForm.Controls.Remove(this);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

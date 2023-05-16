@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace thrid_project
 {
-    public partial class mainForm : Form
+    public partial class MainForm : Form
     {
         public static Atributes atr = new Atributes();
         public UCStartPage sp = new UCStartPage();
@@ -27,7 +27,7 @@ namespace thrid_project
         public static UCEating uzhin = new UCEating(2);
         public static UCConclusion end = new UCConclusion();
         public static UCMap map = new UCMap();
-        public mainForm()
+        public MainForm()
         {
             InitializeComponent();
             sp.Location = new Point(0, 130);
@@ -44,6 +44,13 @@ namespace thrid_project
             zavtrak.next = obed;
             obed.next= uzhin;
             uzhin.next= end;
+            tr.Visible = false;
+            hl.Visible = false;
+            certaintr.Visible = false;
+            zavtrak.Visible = false;
+            obed.Visible = false;
+            uzhin.Visible = false;
+
         }
         private void buttonStart_Click(object sender, EventArgs e)
         {

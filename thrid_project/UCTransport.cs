@@ -28,8 +28,8 @@ namespace thrid_project
             Type = cbType.SelectedItem.ToString();
             switch (Type)
             {
-                case "Поезд": mainForm.atr.TicketType = 0; mainForm.atr.TiketTransportTypeLocation = "вокзала"; break;
-                case "Самолёт": mainForm.atr.TicketType = 1; mainForm.atr.TiketTransportTypeLocation = "аэропорта"; break;
+                case "Поезд": MainForm.atr.TicketType = 0; MainForm.atr.TiketTransportTypeLocation = "вокзала"; break;
+                case "Самолёт": MainForm.atr.TicketType = 1; MainForm.atr.TiketTransportTypeLocation = "аэропорта"; break;
             }
         }
         private void btnFind_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace thrid_project
         {
             int point;
             db.ConnectionOpen();
-            string que = $"select * from Tickets where Country_ID={mainForm.atr.Country_ID} " + $"and Type={mainForm.atr.TicketType}";
+            string que = $"select * from Tickets where Country_ID={MainForm.atr.Country_ID} " + $"and Type={MainForm.atr.TicketType}";
             dt = SQLServer.ExecuteQuerySelect(que);
             if (dt.Rows.Count == 0)
             {
@@ -128,25 +128,25 @@ namespace thrid_project
                     lst[i].Enabled = false;
                 }
             }
-            mainForm.atr.TicketPrice = int.Parse(dt.Rows[tag].ItemArray[1].ToString());
+            MainForm.atr.TicketPrice = int.Parse(dt.Rows[tag].ItemArray[1].ToString());
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Add(mainForm.lv);
-            mainForm.lv.BringToFront();
+            MainForm.ActiveForm.Controls.Add(MainForm.lv);
+            MainForm.lv.BringToFront();
         }
 
-        private void UCTransport_MouseMove(object sender, MouseEventArgs e)
+        private void EnterForm(object sender, EventArgs e)
         {
-            labelDestiantion.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
+            labelDestiantion.Text = MainForm.atr.Country_Name + ", " + MainForm.atr.TownName;
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Remove(this);
+            MainForm.ActiveForm.Controls.Remove(this);
         }
 
         private void bntCancel_Click(object sender, EventArgs e)
@@ -157,5 +157,7 @@ namespace thrid_project
             }
             btnNext.Visible=false;
         }
+
+
     }
 }

@@ -32,8 +32,8 @@ namespace thrid_project
             gMapControl1.DragButton = MouseButtons.Left; // какой кнопкой осуществляется перетаскивание
             gMapControl1.ShowCenter = false; //показывать или скрывать красный крестик в центре
             gMapControl1.ShowTileGridLines = false; //показывать или скрывать тайлы
-            buildPath(mainForm.atr.LatitudeTownFrom, mainForm.atr.LongitudeTownFrom, mainForm.atr.LatitudeTownPlace1, mainForm.atr.LongitudeTownPlace1);
-            buildPath(mainForm.atr.LatitudeTownTo, mainForm.atr.LongitudeTownTo, mainForm.atr.LatitudeTownPlace1, mainForm.atr.LongitudeTownPlace1);
+            buildPath(MainForm.atr.LatitudeTownFrom, MainForm.atr.LongitudeTownFrom, MainForm.atr.LatitudeTownPlace1, MainForm.atr.LongitudeTownPlace1);
+            buildPath(MainForm.atr.LatitudeTownTo, MainForm.atr.LongitudeTownTo, MainForm.atr.LatitudeTownPlace1, MainForm.atr.LongitudeTownPlace1);
         }
         private void buildPath(double p1_lat, double p1_lng, double p2_lat, double p2_lng)
         {
@@ -52,7 +52,7 @@ namespace thrid_project
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Remove(this);
+            MainForm.ActiveForm.Controls.Remove(this);
         }
     }
 }

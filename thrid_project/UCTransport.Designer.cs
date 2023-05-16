@@ -149,7 +149,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "UCTransport";
             this.Size = new System.Drawing.Size(1200, 700);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UCTransport_MouseMove);
+            this.VisibleChanged += new System.EventHandler(this.EnterForm);
+            this.MouseEnter += new System.EventHandler(this.EnterForm);
             this.ResumeLayout(false);
             this.PerformLayout();
 

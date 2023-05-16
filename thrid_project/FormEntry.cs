@@ -62,7 +62,7 @@ namespace thrid_project
         }
         public static void OpenMainForm()
         {
-            Application.Run(new mainForm());
+            Application.Run(new MainForm());
         }
         public static void OpenFormSignUp()
         {

@@ -15,7 +15,6 @@ namespace thrid_project
         public int TownTo;
         public bool License;
         public int Place1;
-        public int Place2;
         public string TownName;
         public int TicketType;
         public int TicketPrice;

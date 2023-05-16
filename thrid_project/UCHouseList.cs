@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
+using Color = System.Drawing.Color;
 
 namespace thrid_project
 {
@@ -17,24 +19,22 @@ namespace thrid_project
         public string Type;
         public int tag;
         List<Panel> lst = new List<Panel>();
+        public int rate;
         public UCHouseList()
         {
             InitializeComponent();
         }
 
-        public void GetHouses()
+        public void GetHouses(DataRow[] dt)
         {
-            db.ConnectionOpen();
-            string que = $"select * from LivingPlace where Type={mainForm.atr.TypeOfHouse} and Town_ID={mainForm.atr.Place1}";
-            dt = SQLServer.ExecuteQuerySelect(que);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < dt.Count(); i++)
             {
                 Label name = new Label
                 {
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = dt.Rows[i].ItemArray[3].ToString(),
+                    Text = dt[i].ItemArray[3].ToString(),
                     Location = new Point(250, 15),
                     BackColor = Color.White,
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
@@ -45,7 +45,7 @@ namespace thrid_project
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = dt.Rows[i].ItemArray[3].ToString(),
+                    Text = dt[i].ItemArray[3].ToString(),
                     Location = new Point(90, 15),
                     BackColor = Color.White,
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
@@ -56,7 +56,7 @@ namespace thrid_project
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = new String('\u2605',int.Parse(dt.Rows[i].ItemArray[2].ToString())),
+                    Text = new String('\u2605',int.Parse(dt[i].ItemArray[2].ToString())),
                     Location = new Point(500, 15),
                     BackColor = Color.White,
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
@@ -80,7 +80,7 @@ namespace thrid_project
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = $"{dt.Rows[i].ItemArray[1]} рублей",
+                    Text = $"{dt[i].ItemArray[1]} рублей",
                     Location = new Point(600, 15),
                     BackColor = Color.White,
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
@@ -100,7 +100,6 @@ namespace thrid_project
                 panel1.Controls.Add(panel);
                 lst.Add(panel);
             }
-            db.ConnectionClose();
         }
         private void add_CLick(object sender, EventArgs e)
         {
@@ -112,29 +111,50 @@ namespace thrid_project
                     lst[i].Enabled = false;
                 }
             }
-            mainForm.atr.Distance = int.Parse(dt.Rows[tag].ItemArray[4].ToString());
-            mainForm.atr.HousePrice = int.Parse(dt.Rows[tag].ItemArray[1].ToString());
-            mainForm.atr.HouseName = dt.Rows[tag].ItemArray[3].ToString();
-            mainForm.atr.HouseRating = new String('\u2605', int.Parse(dt.Rows[tag].ItemArray[2].ToString()));
+            MainForm.atr.Distance = int.Parse(dt.Rows[tag].ItemArray[4].ToString());
+            MainForm.atr.HousePrice = int.Parse(dt.Rows[tag].ItemArray[1].ToString());
+            MainForm.atr.HouseName = dt.Rows[tag].ItemArray[3].ToString();
+            MainForm.atr.HouseRating = new String('\u2605', int.Parse(dt.Rows[tag].ItemArray[2].ToString()));
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Add(mainForm.tc);
-            mainForm.tc.BringToFront();
+            MainForm.ActiveForm.Controls.Add(MainForm.tc);
+            MainForm.tc.Visible = true;
+            MainForm.tc.BringToFront();
         }
 
         private void UCHouseList_MouseEnter(object sender, EventArgs e)
         {
-            label1.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
-            GetHouses();
+            switch (MainForm.atr.TypeOfHouse)
+            {
+                case 0: lblhsname.Text = "Выбор отеля"; break;
+                case 1: lblhsname.Text = "Выбор хотсела"; break;
+                case 2: lblhsname.Text = "Выбор арендованного жилья"; break;
+            }
+            label1.Text = MainForm.atr.Country_Name + ", " + MainForm.atr.TownName;
+            GetHouses(Start());
+        }
+        public DataRow[] Start()
+        {
+            db.ConnectionOpen();
+            string que = $"select * from LivingPlace where Type={MainForm.atr.TypeOfHouse} and Town_ID={MainForm.atr.Place1}";
+            dt = SQLServer.ExecuteQuerySelect(que);
+            db.ConnectionClose();
+            var new_dt = dt.Select("Distance >= 0");
+            return new_dt;
+        }
+        public DataRow[] Rating(int rating)
+        {
+            DataRow[] new_dt = dt.Select($"Rating = {rating}");
+            return new_dt;
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Remove(this);
+            MainForm.ActiveForm.Controls.Remove(this);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -144,6 +164,20 @@ namespace thrid_project
                 lst[i].Enabled = true;
             }
             btnNext.Visible = false;
+        }
+
+        private void checkedListBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            switch (checkedListBox1.SelectedItem.ToString())
+            {
+                case "1 Звезда": rate = 1; break;
+                case "2 Звезды": rate = 2; break;
+                case "3 Звезды": rate = 3; break;
+                case "4 Звезды": rate = 4; break;
+                case "5 Звёзд": rate = 5; break;
+            }
+            panel1.Controls.Clear();
+            GetHouses(Rating(rate));
         }
     }
 }

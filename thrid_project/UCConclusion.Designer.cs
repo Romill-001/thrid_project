@@ -324,6 +324,7 @@
             this.Controls.Add(this.transport);
             this.Name = "UCConclusion";
             this.Size = new System.Drawing.Size(1200, 700);
+            this.VisibleChanged += new System.EventHandler(this.UCConclusion_MouseEnter);
             this.MouseEnter += new System.EventHandler(this.UCConclusion_MouseEnter);
             this.transport.ResumeLayout(false);
             this.transport.PerformLayout();

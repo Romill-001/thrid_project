@@ -21,19 +21,21 @@ namespace thrid_project
         {
             if (check == false)
             {
-                mainForm.ActiveForm.Controls.Add(mainForm.hl);
-                mainForm.hl.BringToFront();
+                MainForm.ActiveForm.Controls.Add(MainForm.hl);
+                MainForm.hl.Visible = true;
+                MainForm.hl.BringToFront();
             }
             else
             {
-                mainForm.ActiveForm.Controls.Add(mainForm.tc);
-                mainForm.tc.BringToFront();
+                MainForm.ActiveForm.Controls.Add(MainForm.tc);
+                MainForm.tc.Visible = true;
+                MainForm.tc.BringToFront();
             }
         }
 
         private void Hotel_Click(object sender, EventArgs e)
         {
-            mainForm.atr.TypeOfHouse = 0;
+            MainForm.atr.TypeOfHouse = 0;
             panel2.Enabled= false;
             panel3.Enabled= false;
             panel4.Enabled= false;
@@ -43,7 +45,7 @@ namespace thrid_project
 
         private void Hostel_Click(object sender, EventArgs e)
         {
-            mainForm.atr.TypeOfHouse = 1;
+            MainForm.atr.TypeOfHouse = 1;
             panel1.Enabled = false;
             panel3.Enabled = false;
             panel4.Enabled = false;
@@ -53,7 +55,7 @@ namespace thrid_project
 
         private void Rent_Click(object sender, EventArgs e)
         {
-            mainForm.atr.TypeOfHouse = 2;
+            MainForm.atr.TypeOfHouse = 2;
             panel2.Enabled = false;
             panel1.Enabled = false;
             panel4.Enabled = false;
@@ -63,7 +65,7 @@ namespace thrid_project
 
         private void Poh_Click(object sender, EventArgs e)
         {
-            mainForm.atr.TypeOfHouse = 3;
+            MainForm.atr.TypeOfHouse = 3;
             panel2.Enabled = false;
             panel3.Enabled = false;
             panel1.Enabled = false;
@@ -74,7 +76,7 @@ namespace thrid_project
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Remove(this);
+            MainForm.ActiveForm.Controls.Remove(this);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

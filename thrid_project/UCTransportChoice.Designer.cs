@@ -31,7 +31,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.label_country = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.bebra = new System.Windows.Forms.Label();
             this.panelpublic = new System.Windows.Forms.Panel();
             this.publictr = new System.Windows.Forms.Label();
             this.taxi = new System.Windows.Forms.Label();
@@ -83,16 +82,6 @@
             this.label1.Size = new System.Drawing.Size(623, 37);
             this.label1.TabIndex = 21;
             this.label1.Text = "Как вы доберётесь до места проживания?";
-            // 
-            // bebra
-            // 
-            this.bebra.AutoSize = true;
-            this.bebra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bebra.Location = new System.Drawing.Point(324, 128);
-            this.bebra.Name = "bebra";
-            this.bebra.Size = new System.Drawing.Size(59, 24);
-            this.bebra.TabIndex = 22;
-            this.bebra.Text = "bebra";
             // 
             // panelpublic
             // 
@@ -211,13 +200,12 @@
             this.Controls.Add(this.paneltaxi);
             this.Controls.Add(this.panelwalking);
             this.Controls.Add(this.panelpublic);
-            this.Controls.Add(this.bebra);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_country);
             this.Controls.Add(this.btnNext);
             this.Name = "UCTransportChoice";
             this.Size = new System.Drawing.Size(1200, 700);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UCTransportChoice_MouseMove);
+            this.MouseEnter += new System.EventHandler(this.UCTransportChoice_MouseEnter);
             this.panelpublic.ResumeLayout(false);
             this.panelpublic.PerformLayout();
             this.paneltaxi.ResumeLayout(false);
@@ -236,7 +224,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label label_country;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label bebra;
         private System.Windows.Forms.Panel panelpublic;
         private System.Windows.Forms.Label publictr;
         private System.Windows.Forms.Label taxi;

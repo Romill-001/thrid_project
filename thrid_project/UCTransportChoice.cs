@@ -19,37 +19,12 @@ namespace thrid_project
             InitializeComponent();
         }
 
-        private void UCTransportChoice_MouseMove(object sender, MouseEventArgs e)
-        {
-            label_country.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
-            bebra.Text = $"Расстояние от {mainForm.atr.TiketTransportTypeLocation} до места проживания: {mainForm.atr.Distance} км";
-            if (mainForm.atr.License == true && mainForm.atr.Distance > 3) 
-            {
-                panelwalking.Visible = false;
-                panelwalking.Enabled = false;
-                panelrent.Location = new Point(473, 429);
-            }
-            else if (mainForm.atr.License == false && mainForm.atr.Distance > 3)
-            {
-                panelwalking.Visible=false;
-                panelwalking.Enabled = false;
-                panelrent.Visible=false;
-                panelrent.Enabled = false;
-            }
-            else if (mainForm.atr.License == false && mainForm.atr.Distance <= 3)
-            {
-                panelrent.Visible = false;
-                panelrent.Enabled = false;
-                panelwalking.Location = new Point(473, 429);
-            }
-        }
-
         private void publictr_Click(object sender, EventArgs e)
         {
             panelrent.Enabled=false;
             paneltaxi.Enabled=false;
             panelwalking.Enabled=false;
-            mainForm.atr.TypeOfTransport = 2;
+            MainForm.atr.TypeOfTransport = 2;
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
@@ -59,7 +34,7 @@ namespace thrid_project
             panelrent.Enabled = false;
             panelpublic.Enabled = false;
             panelwalking.Enabled = false;
-            mainForm.atr.TypeOfTransport = 1;
+            MainForm.atr.TypeOfTransport = 1;
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
@@ -69,7 +44,7 @@ namespace thrid_project
             panelrent.Enabled = false;
             paneltaxi.Enabled = false;
             panelpublic.Enabled = false;
-            mainForm.atr.TypeOfTransport = 0;
+            MainForm.atr.TypeOfTransport = 0;
             check = true;
             btnNext.Visible = true;
             btnCancel.Visible = true;
@@ -80,20 +55,21 @@ namespace thrid_project
             panelpublic.Enabled = false;
             paneltaxi.Enabled = false;
             panelwalking.Enabled = false;
-            mainForm.atr.TypeOfTransport = 3;
+            MainForm.atr.TypeOfTransport = 3;
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Add(mainForm.certaintr);
-            mainForm.certaintr.BringToFront();
+            MainForm.ActiveForm.Controls.Add(MainForm.certaintr);
+            MainForm.certaintr.Visible = true;
+            MainForm.certaintr.BringToFront();
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Remove(this);
+            MainForm.ActiveForm.Controls.Remove(this);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -103,6 +79,11 @@ namespace thrid_project
             panelwalking.Enabled = true;
             panelrent.Enabled = true;
             btnNext.Visible = false;
+        }
+
+        private void UCTransportChoice_MouseEnter(object sender, EventArgs e)
+        {
+            label_country.Text = MainForm.atr.Country_Name + ", " + MainForm.atr.TownName;
         }
     }
 }

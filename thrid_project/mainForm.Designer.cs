@@ -1,6 +1,6 @@
 ﻿namespace thrid_project
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -70,7 +70,7 @@
             this.label2.Text = "Путешествуй и точка.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // mainForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -79,8 +79,9 @@
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonStart);
-            this.Name = "mainForm";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Путешествуй и точка.";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

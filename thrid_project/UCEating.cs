@@ -27,7 +27,7 @@ namespace thrid_project
         public void GetEating()
         {
             db.ConnectionOpen();
-            string que = $"select * from EatingPlaces where Type={type} and Town_ID={mainForm.atr.Place1}";
+            string que = $"select * from EatingPlaces where Type={type} and Town_ID={MainForm.atr.Place1}";
             dt = SQLServer.ExecuteQuerySelect(que);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -101,37 +101,39 @@ namespace thrid_project
                     lst[i].Enabled = false;
                 }
             }
-            mainForm.atr.EatingPlacePrice.Add(int.Parse(dt.Rows[tag].ItemArray[2].ToString()));
-            mainForm.atr.EatingPlaceName.Add(dt.Rows[tag].ItemArray[1].ToString());
-            mainForm.atr.EatingPlaceInfo.Add(dt.Rows[tag].ItemArray[3].ToString());
+            MainForm.atr.EatingPlacePrice.Add(int.Parse(dt.Rows[tag].ItemArray[2].ToString()));
+            MainForm.atr.EatingPlaceName.Add(dt.Rows[tag].ItemArray[1].ToString());
+            MainForm.atr.EatingPlaceInfo.Add(dt.Rows[tag].ItemArray[3].ToString());
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Add(next);
+            MainForm.ActiveForm.Controls.Add(next);
+            next.Visible = true;
             next.BringToFront();
         }
 
         private void btnSkip_Click(object sender, EventArgs e)
         {
-            mainForm.atr.EatingPlacePrice.Add(0);
-            mainForm.atr.EatingPlaceName.Add(null);
-            mainForm.atr.EatingPlaceInfo.Add(null);
-            mainForm.ActiveForm.Controls.Add(next);
+            MainForm.atr.EatingPlacePrice.Add(0);
+            MainForm.atr.EatingPlaceName.Add(null);
+            MainForm.atr.EatingPlaceInfo.Add(null);
+            MainForm.ActiveForm.Controls.Add(next);
+            next.Visible = true;
             next.BringToFront();
         }
 
         private void UCEating_MouseEnter(object sender, EventArgs e)
         {
-            label1.Text = mainForm.atr.Country_Name + ", " + mainForm.atr.TownName;
+            label1.Text = MainForm.atr.Country_Name + ", " + MainForm.atr.TownName;
             GetEating();
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            mainForm.ActiveForm.Controls.Remove(this);
+            MainForm.ActiveForm.Controls.Remove(this);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

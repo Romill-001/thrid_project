@@ -124,7 +124,7 @@
             this.Controls.Add(this.btnNext);
             this.Name = "UCEating";
             this.Size = new System.Drawing.Size(1200, 700);
-            this.MouseEnter += new System.EventHandler(this.UCEating_MouseEnter);
+            this.VisibleChanged += new System.EventHandler(this.UCEating_MouseEnter);
             this.ResumeLayout(false);
             this.PerformLayout();
 

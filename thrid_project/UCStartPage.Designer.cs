@@ -38,9 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.place2 = new System.Windows.Forms.ComboBox();
             this.place1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -160,29 +158,6 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Посещаемые города";
             // 
-            // place2
-            // 
-            this.place2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.place2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.place2.FormattingEnabled = true;
-            this.place2.Items.AddRange(new object[] {
-            "Алма-Ата",
-            "Абу-Даби",
-            "Анталия",
-            "Хургада",
-            "Тбилиси",
-            "Бангкок",
-            "Астана",
-            "Дубай",
-            "Белек",
-            "Батуми",
-            "Пхукет"});
-            this.place2.Location = new System.Drawing.Point(686, 422);
-            this.place2.Name = "place2";
-            this.place2.Size = new System.Drawing.Size(203, 32);
-            this.place2.TabIndex = 12;
-            this.place2.SelectedValueChanged += new System.EventHandler(this.Place2Choice);
-            // 
             // place1
             // 
             this.place1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -206,16 +181,6 @@
             this.place1.TabIndex = 14;
             this.place1.SelectedValueChanged += new System.EventHandler(this.Place1Choice);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(669, 388);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(243, 24);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Место 2 (не обязательно)";
-            // 
             // btnNext
             // 
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -236,11 +201,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.place1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.place2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxToTown);
@@ -267,9 +230,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox place2;
         private System.Windows.Forms.ComboBox place1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnNext;
     }
 }
