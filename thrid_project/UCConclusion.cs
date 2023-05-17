@@ -51,12 +51,15 @@ namespace thrid_project
             housename.Text = MainForm.atr.HouseName;
             houseprice.Text = $"{MainForm.atr.HousePrice} рублей";
             houserating.Text = MainForm.atr.HouseRating;
+            pbHouse.Image = new Bitmap($@".\..\..\Resources\{MainForm.atr.HouseRating.Length}.png");
+            pbTrans.Image = new Bitmap($@".\..\..\Resources\{MainForm.atr.CertainTransportName}.png");
             if (MainForm.atr.EatingPlaceName[0] != null) zavtrakname.Text = MainForm.atr.EatingPlaceName[0]; else zavtrakname.Text = "Не выбрано";
             if (MainForm.atr.EatingPlaceName[1] != null) obedname.Text = MainForm.atr.EatingPlaceName[1]; else obedname.Text = "Не выбрано";
             if (MainForm.atr.EatingPlaceName[2] != null) uzhinname.Text = MainForm.atr.EatingPlaceName[2]; else uzhinname.Text = "Не выбрано";
             if (MainForm.atr.EatingPlacePrice[0] != 0) zavtrakprice.Text = $"{MainForm.atr.EatingPlacePrice[0]} рублей за завтрак"; else zavtrakprice.Visible = false;
             if (MainForm.atr.EatingPlacePrice[1] != 0) obedprice.Text = $"{MainForm.atr.EatingPlacePrice[1]} рублей за обед"; else obedprice.Visible = false;
             if (MainForm.atr.EatingPlacePrice[2] != 0) uzhinprice.Text = $"{MainForm.atr.EatingPlacePrice[2]} рублей за ужин"; else uzhinprice.Visible = false;
+            lblinfohouse.Text = $"{MainForm.atr.TownName}*{MainForm.atr.DistanceCenter} км от центра\n\n\n{MainForm.atr.EatingType}";
         }
         private void btnPrev_Click(object sender, EventArgs e)
         {

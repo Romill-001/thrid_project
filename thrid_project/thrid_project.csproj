@@ -270,6 +270,19 @@
   <ItemGroup>
     <None Include="Resources\Рисунок1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\4.png" />
+    <Content Include="Resources\5.png" />
+    <Content Include="Resources\3.png" />
+    <Content Include="Resources\Ford.png" />
+    <Content Include="Resources\Tesla.png" />
+    <Content Include="Resources\Метро.png" />
+    <Content Include="Resources\Автобус.png" />
+    <Content Include="Resources\Большой минивэн.png" />
+    <Content Include="Resources\Мини-автобус.png" />
+    <Content Include="Resources\Стандарт.png" />
+    <Content Include="Resources\Минивэн.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

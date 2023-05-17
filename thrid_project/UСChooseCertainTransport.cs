@@ -47,6 +47,13 @@ namespace thrid_project
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
 
                 };
+                PictureBox pic = new PictureBox
+                {
+                    Image = new Bitmap($@".\..\..\Resources\{dt[i].ItemArray[4]}.png"),
+                    Location = new Point(20, 20),
+                    Size = new Size(100, 100),
+
+                };
                 Button add = new Button
                 {
                     AutoSize = true,
@@ -80,6 +87,7 @@ namespace thrid_project
                 panel.Controls.Add(add);
                 panel.Controls.Add(name);
                 panel.Controls.Add(price);
+                panel.Controls.Add(pic);
                 panel1.Controls.Add(panel);
                 lst.Add(panel);
             }

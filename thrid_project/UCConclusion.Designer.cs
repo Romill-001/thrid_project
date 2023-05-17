@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.transport = new System.Windows.Forms.Panel();
+            this.pbTrans = new System.Windows.Forms.PictureBox();
             this.transportprice = new System.Windows.Forms.Label();
             this.transportname = new System.Windows.Forms.Label();
             this.zavtrak = new System.Windows.Forms.Panel();
@@ -38,6 +39,8 @@
             this.obedprice = new System.Windows.Forms.Label();
             this.obedname = new System.Windows.Forms.Label();
             this.livingplace = new System.Windows.Forms.Panel();
+            this.pbHouse = new System.Windows.Forms.PictureBox();
+            this.lblinfohouse = new System.Windows.Forms.Label();
             this.houseprice = new System.Windows.Forms.Label();
             this.houserating = new System.Windows.Forms.Label();
             this.housename = new System.Windows.Forms.Label();
@@ -53,15 +56,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnPrev = new System.Windows.Forms.Button();
             this.transport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTrans)).BeginInit();
             this.zavtrak.SuspendLayout();
             this.obed.SuspendLayout();
             this.livingplace.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHouse)).BeginInit();
             this.uzhin.SuspendLayout();
             this.SuspendLayout();
             // 
             // transport
             // 
             this.transport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.transport.Controls.Add(this.pbTrans);
             this.transport.Controls.Add(this.transportprice);
             this.transport.Controls.Add(this.transportname);
             this.transport.Location = new System.Drawing.Point(30, 130);
@@ -69,11 +75,19 @@
             this.transport.Size = new System.Drawing.Size(476, 214);
             this.transport.TabIndex = 0;
             // 
+            // pbTrans
+            // 
+            this.pbTrans.Location = new System.Drawing.Point(43, 47);
+            this.pbTrans.Name = "pbTrans";
+            this.pbTrans.Size = new System.Drawing.Size(100, 100);
+            this.pbTrans.TabIndex = 3;
+            this.pbTrans.TabStop = false;
+            // 
             // transportprice
             // 
             this.transportprice.AutoSize = true;
             this.transportprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.transportprice.Location = new System.Drawing.Point(323, 96);
+            this.transportprice.Location = new System.Drawing.Point(313, 56);
             this.transportprice.Name = "transportprice";
             this.transportprice.Size = new System.Drawing.Size(125, 25);
             this.transportprice.TabIndex = 1;
@@ -152,6 +166,8 @@
             // livingplace
             // 
             this.livingplace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.livingplace.Controls.Add(this.pbHouse);
+            this.livingplace.Controls.Add(this.lblinfohouse);
             this.livingplace.Controls.Add(this.houseprice);
             this.livingplace.Controls.Add(this.houserating);
             this.livingplace.Controls.Add(this.housename);
@@ -160,11 +176,29 @@
             this.livingplace.Size = new System.Drawing.Size(466, 214);
             this.livingplace.TabIndex = 2;
             // 
+            // pbHouse
+            // 
+            this.pbHouse.Location = new System.Drawing.Point(31, 47);
+            this.pbHouse.Name = "pbHouse";
+            this.pbHouse.Size = new System.Drawing.Size(100, 100);
+            this.pbHouse.TabIndex = 4;
+            this.pbHouse.TabStop = false;
+            // 
+            // lblinfohouse
+            // 
+            this.lblinfohouse.AutoSize = true;
+            this.lblinfohouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblinfohouse.Location = new System.Drawing.Point(205, 94);
+            this.lblinfohouse.Name = "lblinfohouse";
+            this.lblinfohouse.Size = new System.Drawing.Size(51, 20);
+            this.lblinfohouse.TabIndex = 3;
+            this.lblinfohouse.Text = "label2";
+            // 
             // houseprice
             // 
             this.houseprice.AutoSize = true;
             this.houseprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.houseprice.Location = new System.Drawing.Point(300, 96);
+            this.houseprice.Location = new System.Drawing.Point(299, 56);
             this.houseprice.Name = "houseprice";
             this.houseprice.Size = new System.Drawing.Size(149, 25);
             this.houseprice.TabIndex = 11;
@@ -328,12 +362,14 @@
             this.MouseEnter += new System.EventHandler(this.UCConclusion_MouseEnter);
             this.transport.ResumeLayout(false);
             this.transport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTrans)).EndInit();
             this.zavtrak.ResumeLayout(false);
             this.zavtrak.PerformLayout();
             this.obed.ResumeLayout(false);
             this.obed.PerformLayout();
             this.livingplace.ResumeLayout(false);
             this.livingplace.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHouse)).EndInit();
             this.uzhin.ResumeLayout(false);
             this.uzhin.PerformLayout();
             this.ResumeLayout(false);
@@ -367,5 +403,8 @@
         private System.Windows.Forms.Label uzhinprice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Label lblinfohouse;
+        private System.Windows.Forms.PictureBox pbTrans;
+        private System.Windows.Forms.PictureBox pbHouse;
     }
 }

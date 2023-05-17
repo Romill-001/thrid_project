@@ -27,6 +27,8 @@ namespace thrid_project
         public int TypeOfTransport;
         public string CertainTransportName;
         public int CertainTransportPrice;
+        public string EatingType;
+        public int DistanceCenter;
         public List<int> EatingPlaceType = new List<int>();
         public List<string> EatingPlaceName = new List<string>();
         public List<int> EatingPlacePrice = new List<int>();
