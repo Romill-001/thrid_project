@@ -19,7 +19,7 @@ namespace thrid_project
         public string Type;
         public int tag;
         List<Panel> lst = new List<Panel>();
-        DataRow[] start {get;set;}
+        DataRow[] start;
         public int rate;
         public int dist;
         public int eating;
@@ -31,7 +31,7 @@ namespace thrid_project
 
         public void GetHouses(DataRow[] dt)
         {
-            if (dt.Length > 0)
+            if (dt.Length != 0)
             {
                 for (int i = 0; i < dt.Count(); i++)
                 {
@@ -126,6 +126,7 @@ namespace thrid_project
             }
             //else
             //{
+            //    panel1.Controls.Clear();
             //    Panel panelcanc = new Panel
             //    {
             //        Size = new Size(780, 180),
@@ -162,7 +163,7 @@ namespace thrid_project
             MainForm.atr.HousePrice = int.Parse(dt.Rows[tag].ItemArray[1].ToString());
             MainForm.atr.HouseName = dt.Rows[tag].ItemArray[3].ToString();
             MainForm.atr.HouseRating = new String('\u2605', int.Parse(dt.Rows[tag].ItemArray[2].ToString()));
-            MainForm.atr.EatingType = dt.Rows[tag].ItemArray[5].ToString();
+            MainForm.atr.EatingType = eatingtype;
             MainForm.atr.DistanceCenter = int.Parse(dt.Rows[tag].ItemArray[6].ToString());
             btnNext.Visible = true;
             btnCancel.Visible = true;
@@ -177,6 +178,7 @@ namespace thrid_project
 
         private void UCHouseList_MouseEnter(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
             db.ConnectionOpen();
             string que = $"select * from LivingPlace where Type={MainForm.atr.TypeOfHouse} and Town_ID={MainForm.atr.Place1}";
             dt = SQLServer.ExecuteQuerySelect(que);
@@ -228,6 +230,10 @@ namespace thrid_project
         private void btnPrev_Click(object sender, EventArgs e)
         {
             MainForm.ActiveForm.Controls.Remove(this);
+            MainForm.hl = new UCHouseList();
+            MainForm.hl.Location = new Point(0, 130);
+            MainForm.hl.Visible= false;
+            MainForm.hl.start = new DataRow[0];
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -237,6 +243,7 @@ namespace thrid_project
                 lst[i].Enabled = true;
             }
             btnNext.Visible = false;
+            btnCancel.Visible = false;
         }
 
         private void checkedListBox1_SelectedValueChanged(object sender, EventArgs e)

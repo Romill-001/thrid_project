@@ -70,7 +70,7 @@
             this.transport.Controls.Add(this.pbTrans);
             this.transport.Controls.Add(this.transportprice);
             this.transport.Controls.Add(this.transportname);
-            this.transport.Location = new System.Drawing.Point(30, 130);
+            this.transport.Location = new System.Drawing.Point(30, 84);
             this.transport.Name = "transport";
             this.transport.Size = new System.Drawing.Size(476, 214);
             this.transport.TabIndex = 0;
@@ -108,7 +108,7 @@
             this.zavtrak.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.zavtrak.Controls.Add(this.zavtrakprice);
             this.zavtrak.Controls.Add(this.zavtrakname);
-            this.zavtrak.Location = new System.Drawing.Point(30, 414);
+            this.zavtrak.Location = new System.Drawing.Point(30, 335);
             this.zavtrak.Name = "zavtrak";
             this.zavtrak.Size = new System.Drawing.Size(313, 219);
             this.zavtrak.TabIndex = 1;
@@ -138,7 +138,7 @@
             this.obed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.obed.Controls.Add(this.obedprice);
             this.obed.Controls.Add(this.obedname);
-            this.obed.Location = new System.Drawing.Point(349, 414);
+            this.obed.Location = new System.Drawing.Point(349, 335);
             this.obed.Name = "obed";
             this.obed.Size = new System.Drawing.Size(305, 219);
             this.obed.TabIndex = 3;
@@ -171,7 +171,7 @@
             this.livingplace.Controls.Add(this.houseprice);
             this.livingplace.Controls.Add(this.houserating);
             this.livingplace.Controls.Add(this.housename);
-            this.livingplace.Location = new System.Drawing.Point(512, 130);
+            this.livingplace.Location = new System.Drawing.Point(512, 84);
             this.livingplace.Name = "livingplace";
             this.livingplace.Size = new System.Drawing.Size(466, 214);
             this.livingplace.TabIndex = 2;
@@ -230,7 +230,7 @@
             this.uzhin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.uzhin.Controls.Add(this.uzhinprice);
             this.uzhin.Controls.Add(this.uzhinname);
-            this.uzhin.Location = new System.Drawing.Point(660, 414);
+            this.uzhin.Location = new System.Drawing.Point(660, 335);
             this.uzhin.Name = "uzhin";
             this.uzhin.Size = new System.Drawing.Size(318, 219);
             this.uzhin.TabIndex = 4;
@@ -259,7 +259,7 @@
             // 
             this.lbltransport.AutoSize = true;
             this.lbltransport.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbltransport.Location = new System.Drawing.Point(24, 85);
+            this.lbltransport.Location = new System.Drawing.Point(24, 50);
             this.lbltransport.Name = "lbltransport";
             this.lbltransport.Size = new System.Drawing.Size(86, 31);
             this.lbltransport.TabIndex = 5;
@@ -269,7 +269,7 @@
             // 
             this.lbllivingplace.AutoSize = true;
             this.lbllivingplace.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbllivingplace.Location = new System.Drawing.Point(506, 85);
+            this.lbllivingplace.Location = new System.Drawing.Point(506, 50);
             this.lbllivingplace.Name = "lbllivingplace";
             this.lbllivingplace.Size = new System.Drawing.Size(86, 31);
             this.lbllivingplace.TabIndex = 6;
@@ -279,7 +279,7 @@
             // 
             this.lblzavtrak.AutoSize = true;
             this.lblzavtrak.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblzavtrak.Location = new System.Drawing.Point(24, 380);
+            this.lblzavtrak.Location = new System.Drawing.Point(24, 301);
             this.lblzavtrak.Name = "lblzavtrak";
             this.lblzavtrak.Size = new System.Drawing.Size(116, 31);
             this.lblzavtrak.TabIndex = 7;
@@ -289,7 +289,7 @@
             // 
             this.lblobed.AutoSize = true;
             this.lblobed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblobed.Location = new System.Drawing.Point(343, 380);
+            this.lblobed.Location = new System.Drawing.Point(343, 301);
             this.lblobed.Name = "lblobed";
             this.lblobed.Size = new System.Drawing.Size(81, 31);
             this.lblobed.TabIndex = 8;
@@ -299,7 +299,7 @@
             // 
             this.lbluzhin.AutoSize = true;
             this.lbluzhin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbluzhin.Location = new System.Drawing.Point(654, 380);
+            this.lbluzhin.Location = new System.Drawing.Point(654, 301);
             this.lbluzhin.Name = "lbluzhin";
             this.lbluzhin.Size = new System.Drawing.Size(80, 31);
             this.lbluzhin.TabIndex = 9;
@@ -310,7 +310,7 @@
             this.map.AutoSize = true;
             this.map.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.map.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.map.Location = new System.Drawing.Point(24, 648);
+            this.map.Location = new System.Drawing.Point(24, 557);
             this.map.Name = "map";
             this.map.Size = new System.Drawing.Size(242, 31);
             this.map.TabIndex = 10;
@@ -321,7 +321,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(284, 25);
+            this.label1.Location = new System.Drawing.Point(230, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(642, 42);
             this.label1.TabIndex = 11;
@@ -331,7 +331,7 @@
             // 
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Image = global::thrid_project.Properties.Resources.Рисунок1;
-            this.btnPrev.Location = new System.Drawing.Point(20, 20);
+            this.btnPrev.Location = new System.Drawing.Point(3, 3);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(30, 30);
             this.btnPrev.TabIndex = 24;
@@ -357,7 +357,7 @@
             this.Controls.Add(this.livingplace);
             this.Controls.Add(this.transport);
             this.Name = "UCConclusion";
-            this.Size = new System.Drawing.Size(1200, 700);
+            this.Size = new System.Drawing.Size(1200, 600);
             this.VisibleChanged += new System.EventHandler(this.UCConclusion_MouseEnter);
             this.MouseEnter += new System.EventHandler(this.UCConclusion_MouseEnter);
             this.transport.ResumeLayout(false);

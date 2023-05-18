@@ -126,6 +126,7 @@ namespace thrid_project
 
         private void UСChooseCertainTransport_MouseEnter(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
             switch (MainForm.atr.TypeOfTransport)
             {
                 case 1: llbtrname.Text = "Выбор такси"; break;
@@ -139,6 +140,9 @@ namespace thrid_project
         private void btnPrev_Click(object sender, EventArgs e)
         {
             MainForm.ActiveForm.Controls.Remove(this);
+            MainForm.certaintr = new UСChooseCertainTransport();
+            MainForm.certaintr.Location = new Point(0, 130);
+            MainForm.certaintr.Visible = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -148,6 +152,7 @@ namespace thrid_project
                 lst[i].Enabled = true;
             }
             btnNext.Visible = false;
+            btnCancel.Visible = false;
         }
     }
 }

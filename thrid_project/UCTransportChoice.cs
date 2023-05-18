@@ -25,6 +25,7 @@ namespace thrid_project
             paneltaxi.Enabled=false;
             panelwalking.Enabled=false;
             MainForm.atr.TypeOfTransport = 2;
+            check = false;
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
@@ -35,6 +36,7 @@ namespace thrid_project
             panelpublic.Enabled = false;
             panelwalking.Enabled = false;
             MainForm.atr.TypeOfTransport = 1;
+            check = false;
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
@@ -56,20 +58,32 @@ namespace thrid_project
             paneltaxi.Enabled = false;
             panelwalking.Enabled = false;
             MainForm.atr.TypeOfTransport = 3;
+            check = false;
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            MainForm.ActiveForm.Controls.Add(MainForm.certaintr);
-            MainForm.certaintr.Visible = true;
-            MainForm.certaintr.BringToFront();
+            if (check == false)
+            {
+                MainForm.ActiveForm.Controls.Add(MainForm.certaintr);
+                MainForm.certaintr.Visible = true;
+                MainForm.certaintr.BringToFront();
+            }
+            else
+            {
+                MainForm.ActiveForm.Controls.Add(MainForm.zavtrak);
+                MainForm.zavtrak.Visible = true;
+                MainForm.zavtrak.BringToFront();
+            }
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
             MainForm.ActiveForm.Controls.Remove(this);
+            MainForm.tc = new UCTransportChoice();
+            MainForm.tc.Location = new Point(0, 130);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -79,6 +93,8 @@ namespace thrid_project
             panelwalking.Enabled = true;
             panelrent.Enabled = true;
             btnNext.Visible = false;
+            btnCancel.Visible = false;
+            MainForm.atr.TypeOfTransport = -1;
         }
 
         private void UCTransportChoice_MouseEnter(object sender, EventArgs e)

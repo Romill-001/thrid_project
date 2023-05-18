@@ -51,7 +51,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(1075, 636);
+            this.btnNext.Location = new System.Drawing.Point(1037, 511);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(105, 40);
             this.btnNext.TabIndex = 18;
@@ -113,7 +113,7 @@
             // 
             this.Rent.AutoSize = true;
             this.Rent.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Rent.Location = new System.Drawing.Point(42, 48);
+            this.Rent.Location = new System.Drawing.Point(37, 47);
             this.Rent.Name = "Rent";
             this.Rent.Size = new System.Drawing.Size(180, 31);
             this.Rent.TabIndex = 0;
@@ -144,7 +144,7 @@
             // 
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Image = global::thrid_project.Properties.Resources.Рисунок1;
-            this.btnPrev.Location = new System.Drawing.Point(20, 20);
+            this.btnPrev.Location = new System.Drawing.Point(3, 3);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(30, 30);
             this.btnPrev.TabIndex = 24;
@@ -157,7 +157,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(1070, 558);
+            this.btnCancel.Location = new System.Drawing.Point(1032, 435);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(114, 60);
             this.btnCancel.TabIndex = 29;
@@ -179,7 +179,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNext);
             this.Name = "UCLiving";
-            this.Size = new System.Drawing.Size(1200, 700);
+            this.Size = new System.Drawing.Size(1200, 600);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

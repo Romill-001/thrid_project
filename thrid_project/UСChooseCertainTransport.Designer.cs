@@ -42,7 +42,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(1075, 636);
+            this.btnNext.Location = new System.Drawing.Point(1013, 484);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(105, 40);
             this.btnNext.TabIndex = 20;
@@ -56,7 +56,7 @@
             this.label_country.AutoSize = true;
             this.label_country.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label_country.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_country.Location = new System.Drawing.Point(522, 61);
+            this.label_country.Location = new System.Drawing.Point(519, 3);
             this.label_country.Name = "label_country";
             this.label_country.Size = new System.Drawing.Size(106, 33);
             this.label_country.TabIndex = 21;
@@ -65,16 +65,16 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(257, 116);
+            this.panel1.Location = new System.Drawing.Point(256, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(640, 581);
+            this.panel1.Size = new System.Drawing.Size(640, 558);
             this.panel1.TabIndex = 22;
             // 
             // btnPrev
             // 
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Image = global::thrid_project.Properties.Resources.Рисунок1;
-            this.btnPrev.Location = new System.Drawing.Point(20, 20);
+            this.btnPrev.Location = new System.Drawing.Point(3, 3);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(30, 30);
             this.btnPrev.TabIndex = 24;
@@ -87,7 +87,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(1070, 553);
+            this.btnCancel.Location = new System.Drawing.Point(1008, 415);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(114, 63);
             this.btnCancel.TabIndex = 28;
@@ -100,7 +100,7 @@
             // 
             this.llbtrname.AutoSize = true;
             this.llbtrname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.llbtrname.Location = new System.Drawing.Point(101, 26);
+            this.llbtrname.Location = new System.Drawing.Point(65, 9);
             this.llbtrname.Name = "llbtrname";
             this.llbtrname.Size = new System.Drawing.Size(60, 24);
             this.llbtrname.TabIndex = 29;
@@ -118,7 +118,7 @@
             this.Controls.Add(this.label_country);
             this.Controls.Add(this.btnNext);
             this.Name = "UСChooseCertainTransport";
-            this.Size = new System.Drawing.Size(1200, 700);
+            this.Size = new System.Drawing.Size(1200, 600);
             this.VisibleChanged += new System.EventHandler(this.UСChooseCertainTransport_MouseEnter);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -158,9 +158,9 @@
             // pictureBox
             // 
             this.pictureBox.Image = global::thrid_project.Properties.Resources.icon;
-            this.pictureBox.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox.Location = new System.Drawing.Point(50, 54);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(138, 140);
+            this.pictureBox.Size = new System.Drawing.Size(100, 100);
             this.pictureBox.TabIndex = 25;
             this.pictureBox.TabStop = false;
             // 
@@ -183,6 +183,7 @@
             this.MaximizeBox = false;
             this.Name = "FormSignUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Регистрация";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

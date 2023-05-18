@@ -143,9 +143,9 @@
             // pictureBox
             // 
             this.pictureBox.Image = global::thrid_project.Properties.Resources.icon;
-            this.pictureBox.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox.Location = new System.Drawing.Point(50, 52);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(138, 140);
+            this.pictureBox.Size = new System.Drawing.Size(100, 100);
             this.pictureBox.TabIndex = 17;
             this.pictureBox.TabStop = false;
             // 
@@ -169,6 +169,7 @@
             this.MinimumSize = new System.Drawing.Size(464, 543);
             this.Name = "FormEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Вход";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

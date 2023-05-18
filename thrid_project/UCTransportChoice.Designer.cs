@@ -53,7 +53,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(1075, 636);
+            this.btnNext.Location = new System.Drawing.Point(1054, 489);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(105, 40);
             this.btnNext.TabIndex = 19;
@@ -87,7 +87,7 @@
             // 
             this.panelpublic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelpublic.Controls.Add(this.publictr);
-            this.panelpublic.Location = new System.Drawing.Point(220, 231);
+            this.panelpublic.Location = new System.Drawing.Point(194, 163);
             this.panelpublic.Name = "panelpublic";
             this.panelpublic.Size = new System.Drawing.Size(278, 100);
             this.panelpublic.TabIndex = 23;
@@ -118,7 +118,7 @@
             // 
             this.paneltaxi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.paneltaxi.Controls.Add(this.taxi);
-            this.paneltaxi.Location = new System.Drawing.Point(728, 231);
+            this.paneltaxi.Location = new System.Drawing.Point(702, 163);
             this.paneltaxi.Name = "paneltaxi";
             this.paneltaxi.Size = new System.Drawing.Size(278, 100);
             this.paneltaxi.TabIndex = 24;
@@ -138,7 +138,7 @@
             // 
             this.panelwalking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelwalking.Controls.Add(this.walking);
-            this.panelwalking.Location = new System.Drawing.Point(220, 429);
+            this.panelwalking.Location = new System.Drawing.Point(194, 361);
             this.panelwalking.Name = "panelwalking";
             this.panelwalking.Size = new System.Drawing.Size(278, 100);
             this.panelwalking.TabIndex = 25;
@@ -158,7 +158,7 @@
             // 
             this.panelrent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelrent.Controls.Add(this.autorent);
-            this.panelrent.Location = new System.Drawing.Point(728, 429);
+            this.panelrent.Location = new System.Drawing.Point(702, 361);
             this.panelrent.Name = "panelrent";
             this.panelrent.Size = new System.Drawing.Size(278, 100);
             this.panelrent.TabIndex = 25;
@@ -180,7 +180,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(1070, 558);
+            this.btnCancel.Location = new System.Drawing.Point(1049, 411);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(114, 63);
             this.btnCancel.TabIndex = 27;
@@ -204,7 +204,7 @@
             this.Controls.Add(this.label_country);
             this.Controls.Add(this.btnNext);
             this.Name = "UCTransportChoice";
-            this.Size = new System.Drawing.Size(1200, 700);
+            this.Size = new System.Drawing.Size(1200, 600);
             this.MouseEnter += new System.EventHandler(this.UCTransportChoice_MouseEnter);
             this.panelpublic.ResumeLayout(false);
             this.panelpublic.PerformLayout();

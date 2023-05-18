@@ -41,6 +41,7 @@ namespace thrid_project
             panel4.Enabled= false;
             btnNext.Visible = true;
             btnCancel.Visible = true;
+            check = false;
         }
 
         private void Hostel_Click(object sender, EventArgs e)
@@ -51,6 +52,7 @@ namespace thrid_project
             panel4.Enabled = false;
             btnNext.Visible = true;
             btnCancel.Visible = true;
+            check = false;
         }
 
         private void Rent_Click(object sender, EventArgs e)
@@ -61,6 +63,7 @@ namespace thrid_project
             panel4.Enabled = false;
             btnNext.Visible = true;
             btnCancel.Visible = true;
+            check = false;
         }
 
         private void Poh_Click(object sender, EventArgs e)
@@ -77,6 +80,8 @@ namespace thrid_project
         private void btnPrev_Click(object sender, EventArgs e)
         {
             MainForm.ActiveForm.Controls.Remove(this);
+            MainForm.lv = new UCLiving();
+            MainForm.lv.Location = new Point(0, 130);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -86,6 +91,7 @@ namespace thrid_project
             panel1.Enabled = true;
             panel4.Enabled = true;
             btnNext.Visible = false;
+            btnCancel.Visible = false;
         }
     }
 }

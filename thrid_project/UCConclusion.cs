@@ -49,10 +49,21 @@ namespace thrid_project
                 transportprice.Text = $"Бесплатно";
             }
             housename.Text = MainForm.atr.HouseName;
+            if (MainForm.atr.TypeOfHouse != 3)
+            {
+                houseprice.Text = $"{MainForm.atr.HousePrice} рублей";
+                pbHouse.Image = new Bitmap($@".\..\..\Resources\{MainForm.atr.HouseRating.Length}.png");
+            }
+            else
+            {
+                houseprice.Text = "Бесплатно";
+            }
             houseprice.Text = $"{MainForm.atr.HousePrice} рублей";
             houserating.Text = MainForm.atr.HouseRating;
-            pbHouse.Image = new Bitmap($@".\..\..\Resources\{MainForm.atr.HouseRating.Length}.png");
-            pbTrans.Image = new Bitmap($@".\..\..\Resources\{MainForm.atr.CertainTransportName}.png");
+            if (MainForm.atr.CertainTransportName != null)
+            {
+                pbTrans.Image = new Bitmap($@".\..\..\Resources\{MainForm.atr.CertainTransportName}.png");
+            }
             if (MainForm.atr.EatingPlaceName[0] != null) zavtrakname.Text = MainForm.atr.EatingPlaceName[0]; else zavtrakname.Text = "Не выбрано";
             if (MainForm.atr.EatingPlaceName[1] != null) obedname.Text = MainForm.atr.EatingPlaceName[1]; else obedname.Text = "Не выбрано";
             if (MainForm.atr.EatingPlaceName[2] != null) uzhinname.Text = MainForm.atr.EatingPlaceName[2]; else uzhinname.Text = "Не выбрано";
@@ -64,6 +75,8 @@ namespace thrid_project
         private void btnPrev_Click(object sender, EventArgs e)
         {
             MainForm.ActiveForm.Controls.Remove(this);
+            MainForm.end = new UCConclusion();
+            MainForm.end.Location = new Point(0, 130);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GMap.NET.MapProviders;
+using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -147,6 +148,9 @@ namespace thrid_project
         private void btnPrev_Click(object sender, EventArgs e)
         {
             MainForm.ActiveForm.Controls.Remove(this);
+            MainForm.tr = new UCTransport();
+            MainForm.tr.Location = new Point(0, 130);
+            MainForm.tr.Visible = false;
         }
 
         private void bntCancel_Click(object sender, EventArgs e)
@@ -156,6 +160,7 @@ namespace thrid_project
                 lst[i].Enabled = true;
             }
             btnNext.Visible=false;
+            btnCancel.Visible = false;
         }
 
 

@@ -143,6 +143,7 @@ namespace thrid_project
                 lst[i].Enabled = true;
             }
             btnNext.Visible = false;
+            btnCancel.Visible = false;
         }
     }
 }

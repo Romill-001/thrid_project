@@ -141,6 +141,7 @@
             this.MinimumSize = new System.Drawing.Size(464, 543);
             this.Name = "FormNewPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Новый пароль";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

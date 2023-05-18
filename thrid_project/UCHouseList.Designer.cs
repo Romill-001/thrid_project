@@ -55,7 +55,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(1075, 636);
+            this.btnNext.Location = new System.Drawing.Point(1054, 509);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(105, 40);
             this.btnNext.TabIndex = 18;
@@ -69,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(521, 65);
+            this.label1.Location = new System.Drawing.Point(487, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 33);
             this.label1.TabIndex = 20;
@@ -79,16 +79,16 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(201, 108);
+            this.panel1.Location = new System.Drawing.Point(201, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(820, 589);
+            this.panel1.Size = new System.Drawing.Size(820, 558);
             this.panel1.TabIndex = 21;
             // 
             // btnPrev
             // 
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Image = global::thrid_project.Properties.Resources.Рисунок1;
-            this.btnPrev.Location = new System.Drawing.Point(20, 20);
+            this.btnPrev.Location = new System.Drawing.Point(4, 3);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(30, 30);
             this.btnPrev.TabIndex = 24;
@@ -101,7 +101,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(1070, 558);
+            this.btnCancel.Location = new System.Drawing.Point(1049, 430);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(114, 62);
             this.btnCancel.TabIndex = 29;
@@ -114,7 +114,7 @@
             // 
             this.lblhsname.AutoSize = true;
             this.lblhsname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblhsname.Location = new System.Drawing.Point(95, 26);
+            this.lblhsname.Location = new System.Drawing.Point(67, 4);
             this.lblhsname.Name = "lblhsname";
             this.lblhsname.Size = new System.Drawing.Size(60, 24);
             this.lblhsname.TabIndex = 30;
@@ -125,7 +125,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.checkedListBox1);
-            this.panel2.Location = new System.Drawing.Point(4, 108);
+            this.panel2.Location = new System.Drawing.Point(4, 39);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(191, 176);
             this.panel2.TabIndex = 31;
@@ -162,7 +162,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.checkedListBox2);
-            this.panel3.Location = new System.Drawing.Point(4, 290);
+            this.panel3.Location = new System.Drawing.Point(4, 221);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(191, 129);
             this.panel3.TabIndex = 32;
@@ -197,9 +197,9 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.checkedListBox3);
-            this.panel4.Location = new System.Drawing.Point(4, 425);
+            this.panel4.Location = new System.Drawing.Point(4, 356);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(191, 240);
+            this.panel4.Size = new System.Drawing.Size(191, 209);
             this.panel4.TabIndex = 33;
             // 
             // label4
@@ -215,11 +215,11 @@
             // checkedListBox3
             // 
             this.checkedListBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkedListBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkedListBox3.FormattingEnabled = true;
             this.checkedListBox3.Location = new System.Drawing.Point(15, 45);
             this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(160, 192);
+            this.checkedListBox3.Size = new System.Drawing.Size(160, 147);
             this.checkedListBox3.TabIndex = 0;
             this.checkedListBox3.SelectedValueChanged += new System.EventHandler(this.checkedListBox3_SelectedValueChanged);
             // 
@@ -228,7 +228,7 @@
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRefresh.Location = new System.Drawing.Point(4, 671);
+            this.btnRefresh.Location = new System.Drawing.Point(4, 571);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(191, 26);
             this.btnRefresh.TabIndex = 34;
@@ -252,7 +252,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNext);
             this.Name = "UCHouseList";
-            this.Size = new System.Drawing.Size(1200, 700);
+            this.Size = new System.Drawing.Size(1200, 600);
             this.VisibleChanged += new System.EventHandler(this.UCHouseList_MouseEnter);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

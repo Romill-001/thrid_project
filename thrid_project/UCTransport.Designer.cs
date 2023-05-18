@@ -44,7 +44,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(1071, 636);
+            this.btnNext.Location = new System.Drawing.Point(1052, 538);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(105, 40);
             this.btnNext.TabIndex = 17;
@@ -59,7 +59,7 @@
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnFind.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFind.Location = new System.Drawing.Point(874, 98);
+            this.btnFind.Location = new System.Drawing.Point(829, 47);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(85, 35);
             this.btnFind.TabIndex = 18;
@@ -69,12 +69,13 @@
             // 
             // cbType
             // 
+            this.cbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
             "Поезд",
             "Самолёт"});
-            this.cbType.Location = new System.Drawing.Point(747, 99);
+            this.cbType.Location = new System.Drawing.Point(702, 48);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(121, 32);
             this.cbType.TabIndex = 19;
@@ -84,7 +85,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(632, 103);
+            this.label1.Location = new System.Drawing.Point(587, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 24);
             this.label1.TabIndex = 20;
@@ -95,15 +96,16 @@
             this.labelDestiantion.AutoSize = true;
             this.labelDestiantion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelDestiantion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelDestiantion.Location = new System.Drawing.Point(474, 42);
+            this.labelDestiantion.Location = new System.Drawing.Point(405, 6);
             this.labelDestiantion.Name = "labelDestiantion";
-            this.labelDestiantion.Size = new System.Drawing.Size(2, 27);
+            this.labelDestiantion.Size = new System.Drawing.Size(50, 27);
             this.labelDestiantion.TabIndex = 21;
+            this.labelDestiantion.Text = "123";
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(151, 88);
+            this.panel1.Location = new System.Drawing.Point(126, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(832, 56);
             this.panel1.TabIndex = 22;
@@ -112,7 +114,7 @@
             // 
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Image = global::thrid_project.Properties.Resources.Рисунок1;
-            this.btnPrev.Location = new System.Drawing.Point(20, 20);
+            this.btnPrev.Location = new System.Drawing.Point(3, 3);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(30, 30);
             this.btnPrev.TabIndex = 23;
@@ -125,7 +127,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(1063, 552);
+            this.btnCancel.Location = new System.Drawing.Point(1044, 467);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(121, 65);
             this.btnCancel.TabIndex = 24;
@@ -148,7 +150,7 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.panel1);
             this.Name = "UCTransport";
-            this.Size = new System.Drawing.Size(1200, 700);
+            this.Size = new System.Drawing.Size(1200, 600);
             this.VisibleChanged += new System.EventHandler(this.EnterForm);
             this.MouseEnter += new System.EventHandler(this.EnterForm);
             this.ResumeLayout(false);
