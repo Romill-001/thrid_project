@@ -38,6 +38,6 @@ namespace thrid_project
         public double LatitudeTownFrom;
         public double LongitudeTownFrom;
         public double LatitudeTownPlace1;
-        public double LongitudeTownPlace1;
+        public double LongitudeTownPlace1;       
     }
 }

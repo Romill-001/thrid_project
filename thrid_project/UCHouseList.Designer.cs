@@ -199,7 +199,7 @@
             this.panel4.Controls.Add(this.checkedListBox3);
             this.panel4.Location = new System.Drawing.Point(4, 356);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(191, 209);
+            this.panel4.Size = new System.Drawing.Size(191, 193);
             this.panel4.TabIndex = 33;
             // 
             // label4
@@ -219,7 +219,7 @@
             this.checkedListBox3.FormattingEnabled = true;
             this.checkedListBox3.Location = new System.Drawing.Point(15, 45);
             this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(160, 147);
+            this.checkedListBox3.Size = new System.Drawing.Size(160, 126);
             this.checkedListBox3.TabIndex = 0;
             this.checkedListBox3.SelectedValueChanged += new System.EventHandler(this.checkedListBox3_SelectedValueChanged);
             // 
@@ -228,9 +228,9 @@
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRefresh.Location = new System.Drawing.Point(4, 571);
+            this.btnRefresh.Location = new System.Drawing.Point(4, 555);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(191, 26);
+            this.btnRefresh.Size = new System.Drawing.Size(191, 42);
             this.btnRefresh.TabIndex = 34;
             this.btnRefresh.Text = "Обновить";
             this.btnRefresh.UseVisualStyleBackColor = false;

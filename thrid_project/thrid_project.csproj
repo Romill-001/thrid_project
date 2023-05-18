@@ -275,6 +275,9 @@
     <Content Include="Resources\5.png" />
     <Content Include="Resources\3.png" />
     <Content Include="Resources\Ford.png" />
+    <Content Include="Resources\eating1.png" />
+    <Content Include="Resources\eating0.png" />
+    <Content Include="Resources\eating2.png" />
     <Content Include="Resources\Tesla.png" />
     <Content Include="Resources\Метро.png" />
     <Content Include="Resources\Автобус.png" />

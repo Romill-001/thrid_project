@@ -17,6 +17,14 @@ namespace thrid_project
         DataTable dt = new DataTable();
         public int tag;
         public int type;
+        DataRow[] start;
+        public bool smoking;
+        public int dist;
+        public int eatingtype;
+        public int clas;
+        public string smokingstr;
+        public string eatingtypestr;
+        public string classtr;
         List<Panel> lst = new List<Panel>();
         public UserControl next;
         public UCEating(int type)
@@ -24,19 +32,33 @@ namespace thrid_project
             this.type = type;
             InitializeComponent();
         }
-        public void GetEating()
+        public void GetEating(DataRow[] dt)
         {
-            db.ConnectionOpen();
-            string que = $"select * from EatingPlaces where Type={type} and Town_ID={MainForm.atr.Place1}";
-            dt = SQLServer.ExecuteQuerySelect(que);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < dt.Length; i++)
             {
+                switch (dt[i].ItemArray[5])
+                {
+                    case 0: smokingstr = "Запрещено"; break;
+                    case 1: smokingstr = "Разрешено"; break;
+                }
+                switch (dt[i].ItemArray[5])
+                {
+                    case 0: classtr = "Эконом"; break;
+                    case 1: classtr = "Бизнес"; break;
+                    case 2: classtr = "Элитное"; break;
+                }
+                switch (dt[i].ItemArray[5])
+                {
+                    case 0: eatingtypestr = "Халяль"; break;
+                    case 1: eatingtypestr = "Веганское"; break;
+                    case 2: eatingtypestr = "Постное"; break;
+                }
                 Label name = new Label
                 {
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = dt.Rows[i].ItemArray[1].ToString(),
+                    Text = dt[i].ItemArray[1].ToString(),
                     Location = new Point(250, 15),
                     BackColor = Color.White,
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
@@ -47,10 +69,17 @@ namespace thrid_project
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = dt.Rows[i].ItemArray[3].ToString(),
-                    Location = new Point(90, 15),
+                    Text = $"{MainForm.atr.TownName}*{dt[i].ItemArray[5]}\n\n\n\n{classtr}*{eatingtypestr}*Курение {smokingstr}",
+                    Location = new Point(250, 50),   
                     BackColor = Color.White,
-                    Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
+                    Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
+
+                };
+                PictureBox pic = new PictureBox
+                {
+                    Image = new Bitmap($@".\..\..\Resources\eating{type}.png"),
+                    Location = new Point(20, 20),
+                    Size = new Size(100, 100),
 
                 };
                 Button add = new Button
@@ -70,7 +99,7 @@ namespace thrid_project
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
                     Tag = i,
-                    Text = $"{dt.Rows[i].ItemArray[2]} рублей",
+                    Text = $"{dt[i].ItemArray[2]} рублей",
                     Location = new Point(600, 15),
                     BackColor = Color.White,
                     Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
@@ -86,6 +115,8 @@ namespace thrid_project
                 panel.Controls.Add(add);
                 panel.Controls.Add(name);
                 panel.Controls.Add(price);
+                panel.Controls.Add(info);
+                panel.Controls.Add(pic);
                 panel1.Controls.Add(panel);
                 lst.Add(panel);
             }
@@ -103,7 +134,7 @@ namespace thrid_project
             }
             MainForm.atr.EatingPlacePrice.Add(int.Parse(dt.Rows[tag].ItemArray[2].ToString()));
             MainForm.atr.EatingPlaceName.Add(dt.Rows[tag].ItemArray[1].ToString());
-            MainForm.atr.EatingPlaceInfo.Add(dt.Rows[tag].ItemArray[3].ToString());
+            MainForm.atr.EatingPlaceInfo.Add($"{MainForm.atr.TownName}*{dt.Rows[tag].ItemArray[5]}\n\n\n\n{classtr}*{eatingtypestr}*Курение {smokingstr}");
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
@@ -127,10 +158,51 @@ namespace thrid_project
 
         private void UCEating_MouseEnter(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
+            db.ConnectionOpen();
+            string que = $"select * from EatingPlaces where Type={type} and Town_ID={MainForm.atr.Place1}";
+            dt = SQLServer.ExecuteQuerySelect(que);
+            db.ConnectionClose();
+            switch (MainForm.atr.TypeOfHouse)
+            {
+                case 0:
+                    lblchooseeating.Text = "Завтрак";
+                    break;
+                case 1:
+                    lblchooseeating.Text = "Обед";
+                    break;
+                case 2:
+                    lblchooseeating.Text = "Ужин";
+                    break;
+            }
             label1.Text = MainForm.atr.Country_Name + ", " + MainForm.atr.TownName;
-            GetEating();
+            GetEating(Start());
         }
-
+        public DataRow[] Start()
+        {
+            start = dt.Select("Distance >= 0");
+            return start;
+        }
+        public DataRow[] Smoking(bool smok)
+        {
+            start = start.AsEnumerable().Where(dr => dr.Field<object>("Smoking").Equals(smok)).ToArray();
+            return start;
+        }
+        public DataRow[] Distance(int distance)
+        {
+            start = start.AsEnumerable().Where(dr => dr.Field<int>("Distance") < distance).ToArray();
+            return start;
+        }
+        public DataRow[] Class(int clas)
+        {
+            start = start.AsEnumerable().Where(dr => dr.Field<int>("Class").Equals(clas)).ToArray();
+            return start;
+        }
+        public DataRow[] EatingType(int type)
+        {
+            start = start.AsEnumerable().Where(dr => dr.Field<int>("EatingType").Equals(type)).ToArray();
+            return start;
+        }
         private void btnPrev_Click(object sender, EventArgs e)
         {
             MainForm.ActiveForm.Controls.Remove(this);
@@ -142,8 +214,64 @@ namespace thrid_project
             {
                 lst[i].Enabled = true;
             }
+            MainForm.atr.EatingPlacePrice.RemoveAt(type);
+            MainForm.atr.EatingPlaceName.RemoveAt(type);
+            MainForm.atr.EatingPlaceInfo.RemoveAt(type);
             btnNext.Visible = false;
             btnCancel.Visible = false;
+        }
+
+        private void checkedListBox1_SelectedValueChanged(object sender, EventArgs e) //class
+        {
+            switch (checkedListBox1.SelectedItem.ToString())
+            {
+                case "Эконом": clas = 0; break;
+                case "Бизнес": clas = 1; break;
+                case "Элитный": clas = 2; break;
+            }
+            panel1.Controls.Clear();
+            GetEating(Class(clas));
+        }
+
+        private void checkedListBox2_SelectedValueChanged(object sender, EventArgs e) //dist
+        {
+            switch (checkedListBox2.SelectedItem.ToString())
+            {
+                case "Меньше 1 км": dist = 1; break;
+                case "Меньше 3 км": dist = 3; break;
+                case "Меньше 5 км": dist = 5; break;
+            }
+            panel1.Controls.Clear();
+            GetEating(Distance(dist));
+        }
+
+        private void checkedListBox3_SelectedValueChanged(object sender, EventArgs e) //eatingtype
+        {
+            switch (checkedListBox3.SelectedItem.ToString())
+            {
+                case "Халяль": eatingtype = 0; break;
+                case "Веганское": eatingtype = 1; break;
+                case "Постное": eatingtype = 2; break;
+            }
+            panel1.Controls.Clear();
+            GetEating(EatingType(eatingtype));
+        }
+
+        private void checkedListBox4_SelectedValueChanged(object sender, EventArgs e) //smoking
+        {
+            switch (checkedListBox4.SelectedItem.ToString())
+            {
+                case "Запрещено": smoking = false; break;
+                case "Разрешено": smoking = true; break;
+            }
+            panel1.Controls.Clear();
+            GetEating(Smoking(smoking));
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            GetEating(Start());
         }
     }
 }
