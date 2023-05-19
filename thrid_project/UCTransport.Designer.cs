@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNext
@@ -44,7 +45,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(1052, 538);
+            this.btnNext.Location = new System.Drawing.Point(1060, 509);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(105, 40);
             this.btnNext.TabIndex = 17;
@@ -59,7 +60,7 @@
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnFind.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFind.Location = new System.Drawing.Point(829, 47);
+            this.btnFind.Location = new System.Drawing.Point(1017, 11);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(85, 35);
             this.btnFind.TabIndex = 18;
@@ -75,7 +76,7 @@
             this.cbType.Items.AddRange(new object[] {
             "Поезд",
             "Самолёт"});
-            this.cbType.Location = new System.Drawing.Point(702, 48);
+            this.cbType.Location = new System.Drawing.Point(890, 12);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(121, 32);
             this.cbType.TabIndex = 19;
@@ -85,7 +86,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(587, 52);
+            this.label1.Location = new System.Drawing.Point(775, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 24);
             this.label1.TabIndex = 20;
@@ -96,7 +97,7 @@
             this.labelDestiantion.AutoSize = true;
             this.labelDestiantion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelDestiantion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelDestiantion.Location = new System.Drawing.Point(405, 6);
+            this.labelDestiantion.Location = new System.Drawing.Point(527, 6);
             this.labelDestiantion.Name = "labelDestiantion";
             this.labelDestiantion.Size = new System.Drawing.Size(50, 27);
             this.labelDestiantion.TabIndex = 21;
@@ -105,9 +106,12 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(126, 36);
+            this.panel1.Controls.Add(this.btnFind);
+            this.panel1.Controls.Add(this.cbType);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(34, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(832, 56);
+            this.panel1.Size = new System.Drawing.Size(1123, 56);
             this.panel1.TabIndex = 22;
             // 
             // btnPrev
@@ -127,7 +131,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(1044, 467);
+            this.btnCancel.Location = new System.Drawing.Point(1052, 427);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(121, 65);
             this.btnCancel.TabIndex = 24;
@@ -144,15 +148,14 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.labelDestiantion);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbType);
-            this.Controls.Add(this.btnFind);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.panel1);
             this.Name = "UCTransport";
             this.Size = new System.Drawing.Size(1200, 600);
             this.VisibleChanged += new System.EventHandler(this.EnterForm);
             this.MouseEnter += new System.EventHandler(this.EnterForm);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

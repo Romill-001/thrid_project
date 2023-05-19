@@ -124,30 +124,20 @@ namespace thrid_project
                     lst.Add(panel);
                 }
             }
-            //else
-            //{
-            //    panel1.Controls.Clear();
-            //    Panel panelcanc = new Panel
-            //    {
-            //        Size = new Size(780, 180),
-            //        Location = new Point(20, 20),
-            //        BackColor = Color.White,
-            //        BorderStyle = BorderStyle.FixedSingle,
-            //        Tag = 1
-            //    };
-            //    Label cancel = new Label
-            //    {
-            //        AutoSize = true,
-            //        BorderStyle = BorderStyle.None,
-            //        Tag = 1,
-            //        Text = "Данные отсутсвтуют! Нажмите кнопку \"Обновить\"",
-            //        Location = new Point(10, 15),
-            //        BackColor = Color.White,
-            //        Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
-            //    };
-            //    panelcanc.Controls.Add(cancel);
-            //    panel1.Controls.Add(panelcanc);
-            //}
+            else
+            {
+                Label name = new Label
+                {
+                    AutoSize = true,
+                    BorderStyle = BorderStyle.None,
+                    Tag = 1,
+                    Text = "По выбранным фильтрам ничего не найдено!",
+                    Location = new Point(20, 20),
+                    BackColor = Color.White,
+                    Font = new Font("Microsoft Sans Serif", 20, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
+                };
+                panel1.Controls.Add(name);
+            }
         }
         private void add_CLick(object sender, EventArgs e)
         {
@@ -296,7 +286,7 @@ namespace thrid_project
                     switch (checkedListBox3.SelectedItem.ToString())
                     {
                         case "Включён завтрак": eating = 1; break;
-                        case "С собсвтенной кухней": eating = 4; break;
+                        case "С собствтенной кухней": eating = 4; break;
                     }
                     break;
                 case 2:

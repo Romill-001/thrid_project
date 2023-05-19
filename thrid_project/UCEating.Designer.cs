@@ -277,7 +277,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(207, 42);
             this.btnRefresh.TabIndex = 35;
-            this.btnRefresh.Text = "Обновить";
+            this.btnRefresh.Text = "Удалить фильтры";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 

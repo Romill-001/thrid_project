@@ -34,93 +34,109 @@ namespace thrid_project
         }
         public void GetEating(DataRow[] dt)
         {
-            for (int i = 0; i < dt.Length; i++)
+            if (dt.Length != 0)
             {
-                switch (dt[i].ItemArray[5])
+                for (int i = 0; i < dt.Length; i++)
                 {
-                    case 0: smokingstr = "Запрещено"; break;
-                    case 1: smokingstr = "Разрешено"; break;
+                    switch (dt[i].ItemArray[8])
+                    {
+                        case false: smokingstr = "Запрещено"; break;
+                        case true: smokingstr = "Разрешено"; break;
+                    }
+                    switch (dt[i].ItemArray[6])
+                    {
+                        case 0: classtr = "Эконом"; break;
+                        case 1: classtr = "Бизнес"; break;
+                        case 2: classtr = "Элитное"; break;
+                    }
+                    switch (dt[i].ItemArray[7])
+                    {
+                        case 0: eatingtypestr = "Халяль"; break;
+                        case 1: eatingtypestr = "Веганское"; break;
+                        case 2: eatingtypestr = "Постное"; break;
+                    }
+                    Label name = new Label
+                    {
+                        AutoSize = true,
+                        BorderStyle = BorderStyle.None,
+                        Tag = i,
+                        Text = dt[i].ItemArray[1].ToString(),
+                        Location = new Point(250, 15),
+                        BackColor = Color.White,
+                        Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
+
+                    };
+                    Label info = new Label
+                    {
+                        AutoSize = true,
+                        BorderStyle = BorderStyle.None,
+                        Tag = i,
+                        Text = $"{MainForm.atr.TownName}*{dt[i].ItemArray[5]}\n\n\n\n{classtr}*{eatingtypestr}*Курение {smokingstr}",
+                        Location = new Point(250, 50),
+                        BackColor = Color.White,
+                        Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
+
+                    };
+                    PictureBox pic = new PictureBox
+                    {
+                        Image = new Bitmap($@".\..\..\Resources\eating{type}.png"),
+                        Location = new Point(20, 20),
+                        Size = new Size(100, 100),
+
+                    };
+                    Button add = new Button
+                    {
+                        AutoSize = true,
+                        FlatStyle = FlatStyle.Flat,
+                        ForeColor = Color.Black,
+                        Tag = i,
+                        Text = "Выбрать",
+                        Location = new Point(650, 100),
+                        BackColor = Color.FromArgb(0, 192, 192),
+                        Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
+                    };
+                    add.Click += add_CLick;
+                    Label price = new Label
+                    {
+                        AutoSize = true,
+                        BorderStyle = BorderStyle.None,
+                        Tag = i,
+                        Text = $"{dt[i].ItemArray[2]} рублей",
+                        Location = new Point(600, 15),
+                        BackColor = Color.White,
+                        Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
+                    };
+                    Panel panel = new Panel
+                    {
+                        Size = new Size(780, 180),
+                        Location = new Point(20, 20 + 180 * i),
+                        BackColor = Color.White,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Tag = i
+                    };
+                    panel.Controls.Add(add);
+                    panel.Controls.Add(name);
+                    panel.Controls.Add(price);
+                    panel.Controls.Add(info);
+                    panel.Controls.Add(pic);
+                    panel1.Controls.Add(panel);
+                    lst.Add(panel);
                 }
-                switch (dt[i].ItemArray[5])
-                {
-                    case 0: classtr = "Эконом"; break;
-                    case 1: classtr = "Бизнес"; break;
-                    case 2: classtr = "Элитное"; break;
-                }
-                switch (dt[i].ItemArray[5])
-                {
-                    case 0: eatingtypestr = "Халяль"; break;
-                    case 1: eatingtypestr = "Веганское"; break;
-                    case 2: eatingtypestr = "Постное"; break;
-                }
+            }
+            else
+            {
                 Label name = new Label
                 {
                     AutoSize = true,
                     BorderStyle = BorderStyle.None,
-                    Tag = i,
-                    Text = dt[i].ItemArray[1].ToString(),
-                    Location = new Point(250, 15),
-                    BackColor = Color.White,
-                    Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
-
-                };
-                Label info = new Label
-                {
-                    AutoSize = true,
-                    BorderStyle = BorderStyle.None,
-                    Tag = i,
-                    Text = $"{MainForm.atr.TownName}*{dt[i].ItemArray[5]}\n\n\n\n{classtr}*{eatingtypestr}*Курение {smokingstr}",
-                    Location = new Point(250, 50),   
-                    BackColor = Color.White,
-                    Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
-
-                };
-                PictureBox pic = new PictureBox
-                {
-                    Image = new Bitmap($@".\..\..\Resources\eating{type}.png"),
+                    Tag = 1,
+                    Text = "По выбранным фильтрам ничего не найдено!",
                     Location = new Point(20, 20),
-                    Size = new Size(100, 100),
-
-                };
-                Button add = new Button
-                {
-                    AutoSize = true,
-                    FlatStyle = FlatStyle.Flat,
-                    ForeColor = Color.Black,
-                    Tag = i,
-                    Text = "Выбрать",
-                    Location = new Point(650, 100),
-                    BackColor = Color.FromArgb(0, 192, 192),
-                    Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
-                };
-                add.Click += add_CLick;
-                Label price = new Label
-                {
-                    AutoSize = true,
-                    BorderStyle = BorderStyle.None,
-                    Tag = i,
-                    Text = $"{dt[i].ItemArray[2]} рублей",
-                    Location = new Point(600, 15),
                     BackColor = Color.White,
-                    Font = new Font("Microsoft Sans Serif", 16, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
+                    Font = new Font("Microsoft Sans Serif", 20, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204))),
                 };
-                Panel panel = new Panel
-                {
-                    Size = new Size(780, 180),
-                    Location = new Point(20, 20 + 180 * i),
-                    BackColor = Color.White,
-                    BorderStyle = BorderStyle.FixedSingle,
-                    Tag = i
-                };
-                panel.Controls.Add(add);
-                panel.Controls.Add(name);
-                panel.Controls.Add(price);
-                panel.Controls.Add(info);
-                panel.Controls.Add(pic);
-                panel1.Controls.Add(panel);
-                lst.Add(panel);
+                panel1.Controls.Add(name);
             }
-            db.ConnectionClose();
         }
         private void add_CLick(object sender, EventArgs e)
         {
@@ -134,7 +150,7 @@ namespace thrid_project
             }
             MainForm.atr.EatingPlacePrice.Add(int.Parse(dt.Rows[tag].ItemArray[2].ToString()));
             MainForm.atr.EatingPlaceName.Add(dt.Rows[tag].ItemArray[1].ToString());
-            MainForm.atr.EatingPlaceInfo.Add($"{MainForm.atr.TownName}*{dt.Rows[tag].ItemArray[5]}\n\n\n\n{classtr}*{eatingtypestr}*Курение {smokingstr}");
+            MainForm.atr.EatingPlaceInfo.Add($"{MainForm.atr.TownName}*{dt.Rows[tag].ItemArray[5]} км от места проживания\n\n\n\n{classtr}*{eatingtypestr}*Курение {smokingstr}");
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }

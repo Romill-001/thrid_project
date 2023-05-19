@@ -265,9 +265,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Рисунок1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -278,6 +275,7 @@
     <Content Include="Resources\eating1.png" />
     <Content Include="Resources\eating0.png" />
     <Content Include="Resources\eating2.png" />
+    <Content Include="Resources\icon.jpg" />
     <Content Include="Resources\Tesla.png" />
     <Content Include="Resources\Метро.png" />
     <Content Include="Resources\Автобус.png" />

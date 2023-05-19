@@ -55,6 +55,13 @@
             this.map = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPrev = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.nametextbox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblsum = new System.Windows.Forms.Label();
             this.transport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbTrans)).BeginInit();
             this.zavtrak.SuspendLayout();
@@ -62,6 +69,9 @@
             this.livingplace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHouse)).BeginInit();
             this.uzhin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // transport
@@ -106,22 +116,23 @@
             // zavtrak
             // 
             this.zavtrak.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.zavtrak.Controls.Add(this.pictureBox1);
             this.zavtrak.Controls.Add(this.zavtrakprice);
             this.zavtrak.Controls.Add(this.zavtrakname);
             this.zavtrak.Location = new System.Drawing.Point(30, 335);
             this.zavtrak.Name = "zavtrak";
-            this.zavtrak.Size = new System.Drawing.Size(313, 219);
+            this.zavtrak.Size = new System.Drawing.Size(191, 219);
             this.zavtrak.TabIndex = 1;
             // 
             // zavtrakprice
             // 
             this.zavtrakprice.AutoSize = true;
-            this.zavtrakprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.zavtrakprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.zavtrakprice.Location = new System.Drawing.Point(9, 181);
             this.zavtrakprice.Name = "zavtrakprice";
-            this.zavtrakprice.Size = new System.Drawing.Size(70, 25);
+            this.zavtrakprice.Size = new System.Drawing.Size(86, 16);
             this.zavtrakprice.TabIndex = 1;
-            this.zavtrakprice.Text = "label1";
+            this.zavtrakprice.Text = "1000 рублей";
             // 
             // zavtrakname
             // 
@@ -136,20 +147,21 @@
             // obed
             // 
             this.obed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.obed.Controls.Add(this.pictureBox2);
             this.obed.Controls.Add(this.obedprice);
             this.obed.Controls.Add(this.obedname);
-            this.obed.Location = new System.Drawing.Point(349, 335);
+            this.obed.Location = new System.Drawing.Point(233, 335);
             this.obed.Name = "obed";
-            this.obed.Size = new System.Drawing.Size(305, 219);
+            this.obed.Size = new System.Drawing.Size(191, 219);
             this.obed.TabIndex = 3;
             // 
             // obedprice
             // 
             this.obedprice.AutoSize = true;
-            this.obedprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.obedprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.obedprice.Location = new System.Drawing.Point(10, 181);
             this.obedprice.Name = "obedprice";
-            this.obedprice.Size = new System.Drawing.Size(70, 25);
+            this.obedprice.Size = new System.Drawing.Size(44, 16);
             this.obedprice.TabIndex = 11;
             this.obedprice.Text = "label1";
             // 
@@ -228,20 +240,21 @@
             // uzhin
             // 
             this.uzhin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uzhin.Controls.Add(this.pictureBox3);
             this.uzhin.Controls.Add(this.uzhinprice);
             this.uzhin.Controls.Add(this.uzhinname);
-            this.uzhin.Location = new System.Drawing.Point(660, 335);
+            this.uzhin.Location = new System.Drawing.Point(441, 335);
             this.uzhin.Name = "uzhin";
-            this.uzhin.Size = new System.Drawing.Size(318, 219);
+            this.uzhin.Size = new System.Drawing.Size(191, 219);
             this.uzhin.TabIndex = 4;
             // 
             // uzhinprice
             // 
             this.uzhinprice.AutoSize = true;
-            this.uzhinprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.uzhinprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.uzhinprice.Location = new System.Drawing.Point(10, 181);
             this.uzhinprice.Name = "uzhinprice";
-            this.uzhinprice.Size = new System.Drawing.Size(70, 25);
+            this.uzhinprice.Size = new System.Drawing.Size(51, 20);
             this.uzhinprice.TabIndex = 11;
             this.uzhinprice.Text = "label1";
             // 
@@ -289,7 +302,7 @@
             // 
             this.lblobed.AutoSize = true;
             this.lblobed.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblobed.Location = new System.Drawing.Point(343, 301);
+            this.lblobed.Location = new System.Drawing.Point(233, 301);
             this.lblobed.Name = "lblobed";
             this.lblobed.Size = new System.Drawing.Size(81, 31);
             this.lblobed.TabIndex = 8;
@@ -299,7 +312,7 @@
             // 
             this.lbluzhin.AutoSize = true;
             this.lbluzhin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbluzhin.Location = new System.Drawing.Point(654, 301);
+            this.lbluzhin.Location = new System.Drawing.Point(442, 301);
             this.lbluzhin.Name = "lbluzhin";
             this.lbluzhin.Size = new System.Drawing.Size(80, 31);
             this.lbluzhin.TabIndex = 9;
@@ -310,11 +323,11 @@
             this.map.AutoSize = true;
             this.map.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.map.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.map.Location = new System.Drawing.Point(24, 557);
+            this.map.Location = new System.Drawing.Point(538, 557);
             this.map.Name = "map";
-            this.map.Size = new System.Drawing.Size(242, 31);
+            this.map.Size = new System.Drawing.Size(391, 31);
             this.map.TabIndex = 10;
-            this.map.Text = "Посмотреть карту";
+            this.map.Text = "Просмотр карты путешествия";
             this.map.Click += new System.EventHandler(this.map_Click);
             // 
             // label1
@@ -338,11 +351,81 @@
             this.btnPrev.UseVisualStyleBackColor = true;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(43, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(43, 52);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(43, 52);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSave.Location = new System.Drawing.Point(940, 547);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(246, 41);
+            this.btnSave.TabIndex = 25;
+            this.btnSave.Text = "Сохранить путешествие";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // nametextbox
+            // 
+            this.nametextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nametextbox.Location = new System.Drawing.Point(849, 467);
+            this.nametextbox.MaxLength = 50;
+            this.nametextbox.Name = "nametextbox";
+            this.nametextbox.Size = new System.Drawing.Size(246, 29);
+            this.nametextbox.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(718, 440);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(483, 24);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Введите название путешествия (50 символов макс.)";
+            // 
+            // lblsum
+            // 
+            this.lblsum.AutoSize = true;
+            this.lblsum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblsum.Location = new System.Drawing.Point(25, 563);
+            this.lblsum.Name = "lblsum";
+            this.lblsum.Size = new System.Drawing.Size(156, 25);
+            this.lblsum.TabIndex = 28;
+            this.lblsum.Text = "Общая сумма:";
+            // 
             // UCConclusion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.lblsum);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.nametextbox);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.map);
@@ -372,6 +455,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbHouse)).EndInit();
             this.uzhin.ResumeLayout(false);
             this.uzhin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,5 +492,12 @@
         private System.Windows.Forms.Label lblinfohouse;
         private System.Windows.Forms.PictureBox pbTrans;
         private System.Windows.Forms.PictureBox pbHouse;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox nametextbox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblsum;
     }
 }

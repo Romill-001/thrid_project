@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using thrid_project;
 
 namespace UnitTestProject3
@@ -17,7 +18,25 @@ namespace UnitTestProject3
             Assert.IsTrue(table.Rows.Count == 1);
         }
 
+        [TestMethod]
+        public void CheckUpdatesInDatabase()
+        {
+            string query_string = "update Accounts SET Password = '2' where Login = '1'";
+            SQLServer.ExecuteQueryInsert_Update(query_string);
 
+            query_string = "select * from Accounts where Login = '1' and Password = '2'";
+            DataTable table = SQLServer.ExecuteQuerySelect(query_string);
+
+            Assert.IsTrue(table.Rows.Count == 1);
+        }
+        readonly SqlConnection sqlConnection = new SqlConnection(DataBase.GetConnectionString());
+        [TestMethod]
+        public void CheckConnection()
+        {
+            DataBase db = new DataBase();
+            db.ConnectionClose();
+            Assert.IsTrue(sqlConnection.State == ConnectionState.Closed);
+        }
         [TestMethod]
         public void ChecksRecordAddedToDatabase()
         {
