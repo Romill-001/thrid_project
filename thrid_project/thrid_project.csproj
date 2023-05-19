@@ -165,6 +165,18 @@
     <Compile Include="UCMap.Designer.cs">
       <DependentUpon>UCMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCMyVisits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMyVisits.Designer.cs">
+      <DependentUpon>UCMyVisits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMyVisitsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMyVisitsList.Designer.cs">
+      <DependentUpon>UCMyVisitsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCTransport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -234,6 +246,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCMap.resx">
       <DependentUpon>UCMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMyVisits.resx">
+      <DependentUpon>UCMyVisits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMyVisitsList.resx">
+      <DependentUpon>UCMyVisitsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCTransport.resx">
       <DependentUpon>UCTransport.cs</DependentUpon>

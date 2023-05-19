@@ -25,6 +25,7 @@ namespace thrid_project
         }
         private void UCConclusion_MouseEnter(object sender, EventArgs e)
         {
+            lblsum.Text = $"Общая сумма: {MainForm.atr.Summa} рублей";
             switch (MainForm.atr.TypeOfHouse)
             {
                 case 0: lbllivingplace.Text = "Ваш отель"; break;
@@ -136,10 +137,10 @@ namespace thrid_project
             db.ConnectionOpen();
             if (!string.IsNullOrEmpty(nametextbox.Text))
             {
-                string query = $"insert into Visits (Account_ID,TripName,TownFrom,TownTo,VisitPlace,TransportName,TransportPrice,LivingPlaceName,LivingPlaceInfo,LivingPlacePrice,TransportImage,LivingPlaceImage,ZavtrakName,ZavtrakPrice,ZavtrakImage,ObedName,ObedPrice,ObedImage,UzhinName,UzhinPrice,UzhinImage,LattitudeTownTo,LongitudeTownTo,LattitudeTownFrom,LongitudeTownFrom,LattitudeVisitPlace,LongitudeVisitPlace,SumPrice) VALUES " +
-                    $"({FormEntry.user_id},'{nametextbox.Text}','{TownFrom}','{TownTo}','{MainForm.atr.TownName}','{transportname.Text}','{transportprice.Text}','{housename.Text}','{lblinfohouse.Text}','{houseprice.Text}'"+
+                string query = $"insert into Visits (Account_ID,TripName,TownFrom,TownTo,VisitPlace,TransportName,TransportPrice,LivingPlaceName,LivingPlaceInfo,LivingPlacePrice,TransportImage,LivingPlaceImage,ZavtrakName,ZavtrakPrice,ZavtrakImage,ObedName,ObedPrice,ObedImage,UzhinName,UzhinPrice,UzhinImage,LattitudeTownTo,LongitudeTownTo,LattitudeTownFrom,LongitudeTownFrom,LattitudeVisitPlace,LongitudeVisitPlace,SumPrice,CurrTrName,CurrHouseName) VALUES " +
+                    $"({FormEntry.user_id},'{nametextbox.Text}','{TownFrom}','{TownTo}','{MainForm.atr.TownName}','{transportname.Text}','{transportprice.Text}','{housename.Text}','{lblinfohouse.Text}','{houseprice.Text}',"+
                     $"'{pictr}','{pichouse}','{zavtrakname.Text}','{zavtrakprice.Text}','{zavtrakpic}','{obedname.Text}','{obedprice.Text}','{obedpic}',"+
-                    $"'{uzhinname.Text}','{uzhinprice.Text}','{uzhinpic}','{MainForm.atr.LatitudeTownTo}','{MainForm.atr.LongitudeTownTo}','{MainForm.atr.LatitudeTownFrom}','{MainForm.atr.LongitudeTownFrom}','{MainForm.atr.LatitudeTownPlace1}','{MainForm.atr.LongitudeTownPlace1}','{0}')";
+                    $"'{uzhinname.Text}','{uzhinprice.Text}','{uzhinpic}','{MainForm.atr.LatitudeTownTo}','{MainForm.atr.LongitudeTownTo}','{MainForm.atr.LatitudeTownFrom}','{MainForm.atr.LongitudeTownFrom}','{MainForm.atr.LatitudeTownPlace1}','{MainForm.atr.LongitudeTownPlace1}','{lblsum.Text}','{lbltransport.Text}','{lbllivingplace.Text})";
                 SQLServer.ExecuteQueryInsert_Update(query);
                 MessageBox.Show("Подборка успешно создана!");
             }

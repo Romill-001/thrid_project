@@ -31,6 +31,7 @@
             this.buttonStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.myvisits = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,12 +71,26 @@
             this.pictureBox.TabIndex = 19;
             this.pictureBox.TabStop = false;
             // 
+            // myvisits
+            // 
+            this.myvisits.BackColor = System.Drawing.SystemColors.Control;
+            this.myvisits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.myvisits.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.myvisits.Location = new System.Drawing.Point(908, 38);
+            this.myvisits.Name = "myvisits";
+            this.myvisits.Size = new System.Drawing.Size(261, 43);
+            this.myvisits.TabIndex = 20;
+            this.myvisits.Text = "Мои путешествия";
+            this.myvisits.UseVisualStyleBackColor = false;
+            this.myvisits.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1194, 729);
+            this.Controls.Add(this.myvisits);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonStart);
@@ -93,6 +108,7 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button myvisits;
     }
 }
 

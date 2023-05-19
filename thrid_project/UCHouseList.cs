@@ -164,6 +164,7 @@ namespace thrid_project
             MainForm.ActiveForm.Controls.Add(MainForm.tc);
             MainForm.tc.Visible = true;
             MainForm.tc.BringToFront();
+            MainForm.atr.Summa += MainForm.atr.HousePrice;
         }
 
         private void UCHouseList_MouseEnter(object sender, EventArgs e)
@@ -219,6 +220,7 @@ namespace thrid_project
         }
         private void btnPrev_Click(object sender, EventArgs e)
         {
+            MainForm.atr.Summa -= MainForm.atr.HousePrice;
             MainForm.ActiveForm.Controls.Remove(this);
             MainForm.hl = new UCHouseList();
             MainForm.hl.Location = new Point(0, 130);

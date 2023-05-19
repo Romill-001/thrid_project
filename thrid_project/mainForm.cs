@@ -27,6 +27,8 @@ namespace thrid_project
         public static UCEating uzhin = new UCEating(2);
         public static UCConclusion end = new UCConclusion();
         public static UCMap map = new UCMap();
+        public static UCMyVisitsList lst = new UCMyVisitsList();
+        public static UCMyVisits curr = new UCMyVisits();
         public MainForm()
         {
             InitializeComponent();
@@ -50,12 +52,22 @@ namespace thrid_project
             zavtrak.Visible = false;
             obed.Visible = false;
             uzhin.Visible = false;
+            lst.Visible = false;
 
         }
         private void buttonStart_Click(object sender, EventArgs e)
         {
             Controls.Add(sp);
             sp.BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lst.Visible = true;
+            myvisits.BackColor= Color.FromArgb(0, 192, 192);
+            lst.Location = new Point(0, 130);
+            Controls.Add(lst);
+            lst.BringToFront();
         }
     }
 }

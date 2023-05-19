@@ -136,6 +136,7 @@ namespace thrid_project
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            MainForm.atr.Summa += MainForm.atr.TicketPrice;
             MainForm.ActiveForm.Controls.Add(MainForm.lv);
             MainForm.lv.BringToFront();
         }
@@ -147,6 +148,7 @@ namespace thrid_project
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
+            MainForm.atr.Summa = 0;
             MainForm.ActiveForm.Controls.Remove(this);
             MainForm.tr = new UCTransport();
             MainForm.tr.Location = new Point(0, 130);
@@ -161,6 +163,7 @@ namespace thrid_project
             }
             btnNext.Visible=false;
             btnCancel.Visible = false;
+            MainForm.atr.TicketPrice = 0;
         }
 
 

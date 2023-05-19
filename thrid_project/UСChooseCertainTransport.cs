@@ -91,7 +91,6 @@ namespace thrid_project
                 panel1.Controls.Add(panel);
                 lst.Add(panel);
             }
-            db.ConnectionClose();
         }
         private void add_CLick(object sender, EventArgs e)
         {
@@ -105,6 +104,7 @@ namespace thrid_project
             }
             MainForm.atr.CertainTransportPrice = int.Parse(dt.Rows[tag].ItemArray[3].ToString());
             MainForm.atr.CertainTransportName = dt.Rows[tag].ItemArray[4].ToString();
+            MainForm.atr.Summa += int.Parse(dt.Rows[tag].ItemArray[3].ToString());
             btnNext.Visible = true;
             btnCancel.Visible = true;
         }
@@ -139,6 +139,7 @@ namespace thrid_project
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
+            MainForm.atr.Summa -= MainForm.atr.CertainTransportPrice;
             MainForm.ActiveForm.Controls.Remove(this);
             MainForm.certaintr = new UСChooseCertainTransport();
             MainForm.certaintr.Location = new Point(0, 130);
@@ -153,6 +154,7 @@ namespace thrid_project
             }
             btnNext.Visible = false;
             btnCancel.Visible = false;
+            MainForm.atr.Summa -= MainForm.atr.CertainTransportPrice;
         }
     }
 }

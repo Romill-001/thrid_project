@@ -157,6 +157,10 @@ namespace thrid_project
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            if (MainForm.atr.EatingPlacePrice[type] != 0)
+            {
+                MainForm.atr.Summa += MainForm.atr.EatingPlacePrice[type];
+            }
             MainForm.ActiveForm.Controls.Add(next);
             next.Visible = true;
             next.BringToFront();
